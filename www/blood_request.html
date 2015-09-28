@@ -28,7 +28,7 @@
 				<li><a href="#">Log In</a></li>
 				<li><a href="#">Forgot Password</a></li>
 				<li><a href="#">Un Subscribe (delete user)</a></li>
-				<li><a href="blood_request.html" class="bordered">Request Blood</a></li> 
+				<li><a href="#" class="bordered">Request Blood</a></li>
 				<li><a href="#">Frequently Asked Questions</a></li>
 			</ul>
 		</nav>
@@ -38,9 +38,43 @@
 	<div id="content">
 
 		<section class="row">
-			<div class="photo-grid">
+			<div>
 
-				<a href="img/plateletdonation.jpg" rel="lightbox" class="col-2"><img src="img/plateletdonation.jpg" alt="process"></a>
+				<form name="requestBlood" action="#" method="POST">
+
+					<fieldset>
+						<legend>Personal information : </legend>
+						Blood required :
+						<select name="bgroup">
+ 							<option value="A+">A+</option>
+ 							<option value="A-">A-</option>
+ 							<option value="B+">B+</option>
+ 							<option value="B-">B-</option>
+						</select>
+						<br>
+						Amount of blood required : (in L)
+						 <input type="number" id="blitre" name="blitre" value="50">
+						 <br>
+					</fieldset>
+
+					<fieldset>
+						<legend>Personal information : </legend>
+						First name : <input type="text" name="fname"><br>
+						Last name : <input type="text" name="lname"><br>
+						Address :
+					</fieldset>
+
+					<fieldset>
+						<legend>Personal information : </legend>
+						When is blood required ? (Date and Time)
+						<br>
+						ready to make payment ?
+						<br>
+					</fieldset>
+
+					<input type="submit" value="request blood">
+
+				</form>
 
 			</div>
 		</section>
