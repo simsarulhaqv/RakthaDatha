@@ -1,0 +1,103 @@
+%\chapter{Introduction}
+
+%\section{Background and Recent Research}
+%\subsection{<any sub section here>}
+
+%\subsection{Literature Survey}
+
+%\subsubsection{<Sub-subsection title>}
+%some text\cite{citation-1-name-here}, some more text
+
+%\subsubsection{<Sub-subsection title>}
+%even more text\footnote{<footnote here>}, and even more.
+
+\section{Motivation}
+
+This report will provide a detailed account of the processes our group
+used to design and implement a database that can be used to manage
+a blood donation system. Each subsection of the report will correspond to an
+important feature of database design.
+
+\section{Requirement Analysis}
+
+\subsection{Features of Front End}
+\begin{itemize}
+  \item Complete and comprehensive information about the process of blood donation.
+  \item Details about the blood donors including their name, eligibility for donation and their blood group.
+  \item admin is the main authority who can do addition, deletion, and modification if required.
+\end{itemize}
+
+\subsection{Functions of Database}
+\break
+\textbf{BLOOD DONORS}
+\begin{itemize}
+  \item Login ID and password to update their personal information.
+  \begin{itemize}
+    \item Phone Numbers
+    \item Address
+    \item Password
+    \item Status
+  \end{itemize}
+  \item Access to their blood donation History.
+  \item Ability to get a certificate for their donation.
+  \item Current blood donation status, including remainder every six months.
+  \item Ability to receive payment for their blood donations.
+\end{itemize}
+
+Note that, the admins can also donate blood.
+
+\textbf{ADMIN}
+\begin{itemize}
+  \item Same as functions for BLOOD DONORS, plus
+  \item Add new donors.
+  \item Remove donors.
+  \item Manage the entire database.
+  \item Modify blood donor details.
+  \item Handle payments if and when necassary.
+  \item Give out certificates to all blood donors.
+  \item Maintain and keep track of organisations that help sustain the blood donation campaign.
+  \item View all donor information except passwords.
+\end{itemize}
+
+\textbf{HELPING ORGANIZATIONS}
+\begin{itemize}
+  \item unique ID
+  \item History of monetary help
+  \item Frequency of payments
+  \item Organization Incharge
+  \item Start Date
+\end{itemize}
+
+\textbf{BLOOD DONATION CENTRE EMPLOYEE}
+\begin{itemize}
+  \item Employee ID
+  \item Centre ID
+  \item First Name
+  \item Last name
+  \item Role
+  \item Salary
+  \item Address
+  \item Phone number
+\end{itemize}
+
+\textbf{BLOOD DONATION CENTRES}
+\begin{itemize}
+  \item Centre ID
+  \item Locations
+  \item Affliated To
+  \item Date of Affliation
+  \item Affliation ID
+   \item status
+ \item descriptive attributes
+ \item Opening time
+ \item Closing time
+\end{itemize}
+
+\textbf{BLOOD REQUESTS}
+\begin{itemize}
+  \item Blood Type required
+  \item Name of Blood Donee
+  \item Address of Blood Donee
+  \item Date and Time of request
+  \item Payment made (if any)
+\end{itemize}
