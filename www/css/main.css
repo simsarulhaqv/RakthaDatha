@@ -218,7 +218,7 @@ body {
   font-feature-settings: "kern", "liga", "frac", "pnum";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  background-color: #22272a;
+  background-color: #FFFFFF;
   color: #ced9e0;
   font-family: "font-family: " Helvetica Neue ",Helvetica,Arial,sans-serif";
   font-size: 1em;
@@ -270,16 +270,16 @@ a {
   -webkit-transition: color 0.1s linear;
   -moz-transition: color 0.1s linear;
   transition: color 0.1s linear;
-  color: #ced9e0;
+  color: #8A2BE2;
   text-decoration: none;
 }
 a:hover {
   color: #9fb5c2;
-  border-color: #9fb5c2;
+  border-color: #7E3517;
 }
 a:active, a:focus {
-  color: #9fb5c2;
-  border-color: #9fb5c2;
+  color: #0000FF;
+  border-color: #0000FF;
   outline: none;
 }
 
