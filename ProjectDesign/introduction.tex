@@ -18,9 +18,10 @@ used to design and implement a database that can be used to manage
 a blood donation system. Each subsection of the report will correspond to an
 important feature of database design.
 
+\begin{sloppypar}
 \section{Database Schema}
 
-\subsection{BDC Employee}
+\subsection{BDC EMPLOYEE}
 
 \begin{tabular}{ | c | c | c | c | c | c | c | }
  \hline
@@ -28,62 +29,110 @@ important feature of database design.
  \hline
 \end{tabular}
 
-\subsection{BDC Employee}
+\subsection{BDC BLOOD AVAILABLITY}
 
-\begin{tabular}{ | c | c | c | c | c | c | c | }
+\begin{tabular}{ | c | c | c | }
  \hline
- EMP ID & BDC ID & F NAME & L NAME & DESIGNATION & DATE OF JOIN & PASSWORD \\
- \hline
-\end{tabular}
-
-\subsection{BDC Employee}
-
-\begin{tabular}{ | c | c | c | c | c | c | c | }
- \hline
- EMP ID & BDC ID & F NAME & L NAME & DESIGNATION & DATE OF JOIN & PASSWORD \\
+ BDC ID & BLOOD GROUP & BLOOD AVAILABLE \\
  \hline
 \end{tabular}
 
-\subsection{BDC Employee}
+\subsection{BDC}
 
-\begin{tabular}{ | c | c | c | c | c | c | c | }
+\begin{tabular}{ | c | c | c | c | c | }
  \hline
- EMP ID & BDC ID & F NAME & L NAME & DESIGNATION & DATE OF JOIN & PASSWORD \\
+ BDC ID & CONTACT NAME & PASSWORD & MGR ID & CITY \\
  \hline
-\end{tabular}
+\end{tabular} \\ \\
 
-\subsection{BDC Employee}
+\subsection{BDC PAYMENT INFO}
 
-\begin{tabular}{ | c | c | c | c | c | c | c | }
+\begin{tabular}{ | c | c | c | }
  \hline
- EMP ID & BDC ID & F NAME & L NAME & DESIGNATION & DATE OF JOIN & PASSWORD \\
- \hline
-\end{tabular}
-
-\subsection{BDC Employee}
-
-\begin{tabular}{ | c | c | c | c | c | c | c | }
- \hline
- EMP ID & BDC ID & F NAME & L NAME & DESIGNATION & DATE OF JOIN & PASSWORD \\
+ BDC ID & AMOUNT RECEIVED & DATE OF TRANSACTION \\
  \hline
 \end{tabular}
 
-\subsection{BDC Employee}
+\subsection{INDIVIDUAL}
 
-\begin{tabular}{ | c | c | c | c | c | c | c | }
+\begin{tabular}{ | c | c | c | c | }
  \hline
- EMP ID & BDC ID & F NAME & L NAME & DESIGNATION & DATE OF JOIN & PASSWORD \\
+ USER ID & PASSWORD & BLOOD TYPE & MOBILE NUMBER \\
+ \hline
+\end{tabular}
+\begin{tabular}{ | c | c | c | c | }
+ \hline
+ E-MAIL & F NAME & L NAME & CITY \\
  \hline
 \end{tabular}
 
-\subsection{BDC Employee}
+\subsection{RECEIVER}
 
-\begin{tabular}{ | c | c | c | c | c | c | c | }
+\begin{tabular}{ | c | c | c | c | c | }
  \hline
- EMP ID & BDC ID & F NAME & L NAME & DESIGNATION & DATE OF JOIN & PASSWORD \\
+ RECEIVER ID & F NAME & L NAME & BLOOD GROUP & E MAIL \\
+ \hline
+\end{tabular}
+\begin{tabular}{ | c | c | c | c | }
+ \hline
+ MOBILE NUMBER & AMOUNT REQUIRED & DATE OF REQUIREMENT & CITY \\
  \hline
 \end{tabular}
 
+\subsection{MONETARY ORGANISATION}
+
+\begin{tabular}{ | c | c | c | c | }
+ \hline
+ ORG ID & ORG NAME & CONTACT NAME & E MAIL \\
+ \hline
+\end{tabular}
+
+\begin{tabular}{ | c | c | c | }
+ \hline
+ PASSWORD & CONTACT NUMBER & CITY \\
+ \hline
+\end{tabular} \\ \\
+
+\subsection{ORGANISATION PAYMENT INFO}
+
+\begin{tabular}{ | c | c | c | }
+ \hline
+ ORG ID & PAYMENT GIVEN & DATE OF TRANSACTION \\
+ \hline
+\end{tabular}
+
+\subsection{RAKTHADATHA}
+
+\begin{tabular}{ | c | c | c | }
+ \hline
+ ADMIN ID & PASSWORD & CITY \\
+ \hline
+\end{tabular}
+
+\subsection{TRANSFER INFO}
+
+\begin{tabular}{ | c | c | c |}
+ \hline
+ ORG ID & BDC ID & AMOUNT TRANSFERED \\
+ \hline
+\end{tabular}
+
+\subsection{CITY - STATE}
+
+\begin{tabular}{ | c | c | }
+ \hline
+ CITY & STATE \\
+ \hline
+\end{tabular}
+
+\subsection{STATE - COUNTRY}
+
+\begin{tabular}{ | c | c | }
+ \hline
+ STATE & COUNTRY \\
+ \hline
+\end{tabular}
+\end{sloppypar}
 
 \section{Entity Relationship Diagram}
 \begin{figure}[htb]
@@ -93,5 +142,8 @@ important feature of database design.
 \label{fig:label} % insert suitable label, this is used to refer to a fig from within the text as shown above
 \end{figure}
 
-\section{Glossary}
-BDC Employee : Blood Donation Centre Employee
+%\section{Unknown Terms}
+%BDC : Blood Donation Centre \\
+%EMP : Employee \\
+%MGR : Manager \\
+%ORG : Organisation \\
