@@ -8,6 +8,7 @@
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<link rel="stylesheet" href="css/fluidbox.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/style.css">
 
 	<title> :: RakthaDatha :: </title>
 
@@ -21,9 +22,9 @@
 			<div id="logo"><a href="#">RakthaDatha</a></div>
 			<div id="subtitle">the online blood donation management system</div>
 		</div>
-		<nav>
+		<nav id="head">
 			<ul>
-				<li><a href="#">Home</a></li>
+				<li><a href="index.html">Home</a></li>
 				<li><a href="#">Sign Up</a></li>
 				<li><a href="#">Log In</a></li>
 				<li><a href="#">Forgot Password</a></li>
@@ -44,24 +45,24 @@
 
 					<fieldset>
 						<legend>Personal information : </legend>
-						Blood required :
 						<select name="bgroup">
+							<option value="">- Blood required -</option>
  							<option value="A+">A+</option>
  							<option value="A-">A-</option>
  							<option value="B+">B+</option>
  							<option value="B-">B-</option>
 						</select>
 						<br>
-						Amount of blood required : (in L)
-						 <input type="number" id="blitre" name="blitre" value="50">
+						 Amount of blood required : (in L) <input type="number" id="blitre" name="blitre" placeholder="Amount of blood required : (in L)">
 						 <br>
 					</fieldset>
 
 					<fieldset>
 						<legend>Personal information : </legend>
-						First name : <input type="text" name="fname"><br>
-						Last name : <input type="text" name="lname"><br>
-						Address :
+						 <input type="text" name="fname" id="fname" placeholder="First name"><br>
+						 <input type="text" name="lname" id="lname" placeholder="Last name"><br>
+						<textarea name="message" id="message" placeholder="Address" rows="6"></textarea>
+
 					</fieldset>
 
 					<fieldset>
@@ -72,7 +73,7 @@
 						<br>
 					</fieldset>
 
-					<input type="submit" value="request blood">
+					<input type="submit" value="request blood" class="special">
 
 				</form>
 

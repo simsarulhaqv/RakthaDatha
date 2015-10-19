@@ -16,6 +16,10 @@ time, mark, audio, video {
   outline: 0;
   vertical-align: baseline;
   background: transparent;
+
+  font-size: 100%;
+	font: inherit;
+
 }
 
 html, body {
@@ -524,6 +528,9 @@ header nav ul li a.bordered {
   margin-right: auto;
   padding-top: 2em;
   padding-bottom: 5em;
+
+  color : #0000FF;
+
 }
 #content section.row:after {
   content: "";
@@ -649,3 +656,7 @@ header nav ul li a.bordered {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+#head {
+	float : right;
+}
