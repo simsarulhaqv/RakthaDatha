@@ -1,0 +1,340 @@
+-- MySQL dump 10.13  Distrib 5.5.44, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: rakthadatha
+-- ------------------------------------------------------
+-- Server version	5.5.44-0+deb8u1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `BDC`
+--
+
+DROP TABLE IF EXISTS `BDC`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BDC` (
+  `BDC_ID` char(6) NOT NULL,
+  `CONTACT_NAME` varchar(100) DEFAULT NULL,
+  `PASSWORD` varchar(100) DEFAULT NULL,
+  `MGR_ID` int(11) NOT NULL,
+  `CITY` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`BDC_ID`),
+  KEY `MGR_ID` (`MGR_ID`),
+  CONSTRAINT `BDC_ibfk_1` FOREIGN KEY (`MGR_ID`) REFERENCES `BDC_EMPLOYEE` (`EMP_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BDC`
+--
+
+LOCK TABLES `BDC` WRITE;
+/*!40000 ALTER TABLE `BDC` DISABLE KEYS */;
+/*!40000 ALTER TABLE `BDC` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BDC_BLOOD_AVAILABLITY`
+--
+
+DROP TABLE IF EXISTS `BDC_BLOOD_AVAILABLITY`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BDC_BLOOD_AVAILABLITY` (
+  `BDC_ID` char(6) NOT NULL,
+  `BLOOD_GROUP` char(3) DEFAULT NULL,
+  `BLOOD_AVAILABLE` decimal(7,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BDC_BLOOD_AVAILABLITY`
+--
+
+LOCK TABLES `BDC_BLOOD_AVAILABLITY` WRITE;
+/*!40000 ALTER TABLE `BDC_BLOOD_AVAILABLITY` DISABLE KEYS */;
+/*!40000 ALTER TABLE `BDC_BLOOD_AVAILABLITY` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BDC_EMPLOYEE`
+--
+
+DROP TABLE IF EXISTS `BDC_EMPLOYEE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BDC_EMPLOYEE` (
+  `EMP_ID` int(11) NOT NULL,
+  `BDC_ID` char(6) NOT NULL DEFAULT '',
+  `F_NAME` varchar(100) DEFAULT NULL,
+  `L_NAME` varchar(100) DEFAULT NULL,
+  `DESIGNATION` varchar(100) DEFAULT NULL,
+  `DATE_OF_JOIN` date DEFAULT NULL,
+  `PASSWORD` varchar(100) DEFAULT NULL,
+  `SALARY` decimal(7,2) DEFAULT NULL,
+  PRIMARY KEY (`EMP_ID`,`BDC_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BDC_EMPLOYEE`
+--
+
+LOCK TABLES `BDC_EMPLOYEE` WRITE;
+/*!40000 ALTER TABLE `BDC_EMPLOYEE` DISABLE KEYS */;
+/*!40000 ALTER TABLE `BDC_EMPLOYEE` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `BDC_PAYMENT_INFO`
+--
+
+DROP TABLE IF EXISTS `BDC_PAYMENT_INFO`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `BDC_PAYMENT_INFO` (
+  `BDC_ID` char(6) NOT NULL,
+  `AMOUNT_RECEIVED` decimal(20,2) DEFAULT NULL,
+  `DATE_OF_TRANSACTION` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`BDC_ID`,`DATE_OF_TRANSACTION`),
+  CONSTRAINT `BDC_PAYMENT_INFO_ibfk_1` FOREIGN KEY (`BDC_ID`) REFERENCES `BDC` (`BDC_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `BDC_PAYMENT_INFO`
+--
+
+LOCK TABLES `BDC_PAYMENT_INFO` WRITE;
+/*!40000 ALTER TABLE `BDC_PAYMENT_INFO` DISABLE KEYS */;
+/*!40000 ALTER TABLE `BDC_PAYMENT_INFO` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `CITY_STATE`
+--
+
+DROP TABLE IF EXISTS `CITY_STATE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `CITY_STATE` (
+  `CITY` varchar(100) NOT NULL,
+  `STATE` varchar(100) NOT NULL,
+  PRIMARY KEY (`CITY`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `CITY_STATE`
+--
+
+LOCK TABLES `CITY_STATE` WRITE;
+/*!40000 ALTER TABLE `CITY_STATE` DISABLE KEYS */;
+/*!40000 ALTER TABLE `CITY_STATE` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `DONOR`
+--
+
+DROP TABLE IF EXISTS `DONOR`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DONOR` (
+  `DONOR_ID` varchar(100) NOT NULL DEFAULT '',
+  `PASSWORD` varchar(100) DEFAULT NULL,
+  `BLOOD_TYPE` char(3) DEFAULT NULL,
+  `MOBILE_NUMBER` char(14) DEFAULT NULL,
+  `E_MAIL` varchar(100) DEFAULT NULL,
+  `F_NAME` varchar(100) DEFAULT NULL,
+  `L_NAME` varchar(100) DEFAULT NULL,
+  `CITY` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`DONOR_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `DONOR`
+--
+
+LOCK TABLES `DONOR` WRITE;
+/*!40000 ALTER TABLE `DONOR` DISABLE KEYS */;
+/*!40000 ALTER TABLE `DONOR` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MONETARY_ORGANISATION`
+--
+
+DROP TABLE IF EXISTS `MONETARY_ORGANISATION`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MONETARY_ORGANISATION` (
+  `ORG_ID` int(11) NOT NULL,
+  `ORG_NAME` varchar(100) DEFAULT NULL,
+  `CONTACT_NAME` varchar(100) DEFAULT NULL,
+  `E_MAIL` varchar(100) DEFAULT NULL,
+  `PASSWORD` varchar(100) DEFAULT NULL,
+  `CONTACT_NUMBER` char(14) DEFAULT NULL,
+  PRIMARY KEY (`ORG_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MONETARY_ORGANISATION`
+--
+
+LOCK TABLES `MONETARY_ORGANISATION` WRITE;
+/*!40000 ALTER TABLE `MONETARY_ORGANISATION` DISABLE KEYS */;
+/*!40000 ALTER TABLE `MONETARY_ORGANISATION` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MONETARY_ORGANISATION_PAYMENT_INFO`
+--
+
+DROP TABLE IF EXISTS `MONETARY_ORGANISATION_PAYMENT_INFO`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MONETARY_ORGANISATION_PAYMENT_INFO` (
+  `ORG_ID` int(11) NOT NULL,
+  `PAYMENT_GIVEN` decimal(7,2) DEFAULT NULL,
+  `DATE_OF_TRANSACTION` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ORG_ID`,`DATE_OF_TRANSACTION`),
+  CONSTRAINT `MONETARY_ORGANISATION_PAYMENT_INFO_ibfk_1` FOREIGN KEY (`ORG_ID`) REFERENCES `MONETARY_ORGANISATION` (`ORG_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MONETARY_ORGANISATION_PAYMENT_INFO`
+--
+
+LOCK TABLES `MONETARY_ORGANISATION_PAYMENT_INFO` WRITE;
+/*!40000 ALTER TABLE `MONETARY_ORGANISATION_PAYMENT_INFO` DISABLE KEYS */;
+/*!40000 ALTER TABLE `MONETARY_ORGANISATION_PAYMENT_INFO` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ORG_BDC_TRANSFER_INFO`
+--
+
+DROP TABLE IF EXISTS `ORG_BDC_TRANSFER_INFO`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ORG_BDC_TRANSFER_INFO` (
+  `ORG_ID` int(11) NOT NULL,
+  `BDC_ID` char(6) NOT NULL,
+  `AMOUNT_TRANSFERRED` decimal(14,2) DEFAULT NULL,
+  PRIMARY KEY (`ORG_ID`,`BDC_ID`),
+  KEY `BDC_ID` (`BDC_ID`),
+  CONSTRAINT `ORG_BDC_TRANSFER_INFO_ibfk_1` FOREIGN KEY (`ORG_ID`) REFERENCES `MONETARY_ORGANISATION` (`ORG_ID`),
+  CONSTRAINT `ORG_BDC_TRANSFER_INFO_ibfk_2` FOREIGN KEY (`BDC_ID`) REFERENCES `BDC` (`BDC_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ORG_BDC_TRANSFER_INFO`
+--
+
+LOCK TABLES `ORG_BDC_TRANSFER_INFO` WRITE;
+/*!40000 ALTER TABLE `ORG_BDC_TRANSFER_INFO` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ORG_BDC_TRANSFER_INFO` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `RAKTHADATHA`
+--
+
+DROP TABLE IF EXISTS `RAKTHADATHA`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RAKTHADATHA` (
+  `ADMIN_ID` varchar(10) NOT NULL,
+  `PASSWORD` varchar(100) DEFAULT NULL,
+  `CITY` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`ADMIN_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `RAKTHADATHA`
+--
+
+LOCK TABLES `RAKTHADATHA` WRITE;
+/*!40000 ALTER TABLE `RAKTHADATHA` DISABLE KEYS */;
+/*!40000 ALTER TABLE `RAKTHADATHA` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `RECEIVER`
+--
+
+DROP TABLE IF EXISTS `RECEIVER`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RECEIVER` (
+  `RECEIVER_ID` varchar(100) NOT NULL,
+  `F_NAME` varchar(100) DEFAULT NULL,
+  `L_NAME` varchar(100) DEFAULT NULL,
+  `BLOOD_GROUP` char(3) DEFAULT NULL,
+  `E_MAIL` varchar(100) DEFAULT NULL,
+  `MOBILE_NUMBER` char(14) DEFAULT NULL,
+  `AMOUNT_BLOOD_REQUIRED` decimal(7,2) DEFAULT NULL,
+  `DATE_OF_REQUIREMENT` date DEFAULT NULL,
+  `CITY` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`RECEIVER_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `RECEIVER`
+--
+
+LOCK TABLES `RECEIVER` WRITE;
+/*!40000 ALTER TABLE `RECEIVER` DISABLE KEYS */;
+/*!40000 ALTER TABLE `RECEIVER` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `STATE_COUNTRY`
+--
+
+DROP TABLE IF EXISTS `STATE_COUNTRY`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `STATE_COUNTRY` (
+  `STATE` varchar(100) NOT NULL,
+  `COUNTRY` varchar(100) NOT NULL,
+  PRIMARY KEY (`STATE`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `STATE_COUNTRY`
+--
+
+LOCK TABLES `STATE_COUNTRY` WRITE;
+/*!40000 ALTER TABLE `STATE_COUNTRY` DISABLE KEYS */;
+/*!40000 ALTER TABLE `STATE_COUNTRY` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-10-19 22:48:39
