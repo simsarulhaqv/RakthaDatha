@@ -1,3 +1,9 @@
+<?php
+
+require_once("global.php");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,13 +30,13 @@
 		</div>
 		<nav id="head">
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Sign Up</a></li>
-				<li><a href="#">Log In</a></li>
-				<li><a href="#">Forgot Password</a></li>
-				<li><a href="#">Un Subscribe (delete user)</a></li>
-				<li><a href="#" class="bordered">Request Blood</a></li>
-				<li><a href="#">Frequently Asked Questions</a></li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="signup.php">Sign Up</a></li>
+				<li><a href="login.php">Log In</a></li>
+				<li><a href="forgot_pw.php">Forgot Password</a></li>
+				<li><a href="unsubscribe.php">Un Subscribe (delete user)</a></li>
+				<li><a href="blood_request.php" class="bordered">Request Blood</a></li>
+				<li><a href="faq.php">Frequently Asked Questions</a></li>
 			</ul>
 		</nav>
 
@@ -41,7 +47,7 @@
 		<section class="row">
 			<div>
 
-				<form name="requestBlood" action="#" method="POST">
+				<form name="requestBlood" action="" method="POST">
 
 					<fieldset>
 						<legend>Personal information : </legend>
@@ -110,6 +116,7 @@
 	<script src="js/jquery.1.11.min.js"></script>
 	<script src="js/jquery.fluidbox.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/script.js"></script>
 
 </body>
 </html>
