@@ -66,7 +66,28 @@ require_once("global.php");
 					else{
 						if($tablename == "ADMIN"){
 							// assumption : only one admin
-							echo "admin";
+							//echo "admin";
+							?>
+							<form name="adminFrm" action="addnew.php" method="POST">
+
+								<select id="uniqid" name="uniqid" onchange="admin_actions()">
+									<option value="">- Select One of the below -</option>
+									<option value="addnewdnr">Add New Donor</option>
+									<option value="remdnr">Remove a Donor</option>
+									<option value="addbdc">Add Blood Donation Centre</option>
+									<option value="rembdc">Remove Blood Donation Centre</option>
+									<option value="addmonorg">Add new Monetary Organisation</option>
+									<option value="remmonorg">Remove Monetary Orh=ganisation</option>
+									<option value="viewalldnr">View all Donor Details</option>
+								</select>
+
+								<div id="op1">
+
+								</div>
+
+							</form>
+							<?php
+
 						}
 						elseif ($tablename == "BDC") {
 	 						// BDC

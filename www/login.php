@@ -71,11 +71,11 @@ require_once("global.php");
 					else{
 						$username = $_POST['username'];
 						$password = $_POST['password'];
-						$sqlquery1 = "SELECT * FROM rakthadatha WHERE ADMIN_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
-						$sqlquery2 = "SELECT * FROM bdc WHERE BDC_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
-						$sqlquery3 = "SELECT * FROM bdc_employee WHERE EMP_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
-						$sqlquery4 = "SELECT * FROM donor WHERE DONOR_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
-						$sqlquery5 = "SELECT * FROM monetary_organisation WHERE ORG_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
+						$sqlquery1 = "SELECT * FROM RAKTHADATHA WHERE ADMIN_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
+						$sqlquery2 = "SELECT * FROM BDC WHERE BDC_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
+						$sqlquery3 = "SELECT * FROM BDC_EMPLOYEE WHERE EMP_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
+						$sqlquery4 = "SELECT * FROM DONOR WHERE DONOR_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
+						$sqlquery5 = "SELECT * FROM MONETARY_ORGANISATION WHERE ORG_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
 
     				$result1 = $mysqli->query($sqlquery1);
 						$result2 = $mysqli->query($sqlquery2);
@@ -90,7 +90,7 @@ require_once("global.php");
 							$_SESSION['tname'] = "ADMIN";
 							$_SESSION['username'] = $row['ADMIN_ID'];
 							$_SESSION['city'] = $row['CITY'];
-							header('Location: admin.php');
+							header('Location: general.php');
 						}
 						else{
 							if ($result2->num_rows == 1) {
@@ -102,7 +102,7 @@ require_once("global.php");
 								$_SESSION['city'] = $row['CITY'];
 								$_SESSION['cname'] = $row['CONTACT_NAME'];
 								$_SESSION['mgrid'] = $row['MGR_ID'];
-								header('Location: admin.php');
+								header('Location: general.php');
 							}
 							else{
 								if ($result3->num_rows == 1) {
@@ -115,7 +115,7 @@ require_once("global.php");
 									$_SESSION['fname'] = $row['F_NAME'];
 									$_SESSION['lname'] = $row['L_NAME'];
 									$_SESSION['bdcid'] = $row['BDC_ID'];
-									header('Location: admin.php');
+									header('Location: general.php');
 								}
 								else{
 									if ($result4->num_rows == 1) {
@@ -128,7 +128,7 @@ require_once("global.php");
 										$_SESSION['fname'] = $row['F_NAME'];
 										$_SESSION['lname'] = $row['L_NAME'];
 										$_SESSION['bloodtype'] = $row['BLOOD_TYPE'];
-										header('Location: admin.php');
+										header('Location: general.php');
 									}
 									else{
 										if ($result5->num_rows == 1) {
@@ -139,7 +139,7 @@ require_once("global.php");
 											$_SESSION['username'] = $row['ORG_ID'];
 											//$_SESSION['city'] = $row['CITY'];
 											$_SESSION['cname'] = $row['CONTACT_NAME'];
-											header('Location: admin.php');
+											header('Location: general.php');
 										}
 										else{
 										// no success
