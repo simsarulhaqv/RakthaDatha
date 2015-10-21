@@ -36,9 +36,20 @@ require_once("global.php");
 		<nav id="head">
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="signup.php">Sign Up</a></li>
-				<li><a href="login.php">Log In</a></li>
-				<li><a href="forgot_pw.php">Forgot Password</a></li>
+				<?php
+					if(isset($_SESSION['username'])){
+				?>
+						<li><a href="logout.php">Log Out</a></li>
+				<?php
+					}
+					else{
+				?>
+						<li><a href="signup.php">Sign Up</a></li>
+						<li><a href="login.php">Log In</a></li>
+						<li><a href="forgot_pw.php">Forgot Password</a></li>
+				<?php
+					}
+				?>
 				<li><a href="unsubscribe.php">Un Subscribe (delete user)</a></li>
 				<li><a href="blood_request.php" class="bordered">Request Blood</a></li>
 				<li><a href="faq.php">Frequently Asked Questions</a></li>
@@ -52,11 +63,94 @@ require_once("global.php");
 		<section class="row">
 			<div>
 
+				<?php
+					if(isset($_POST['uniqid'])){
+
+						$uniqid = $_POST['uniqid'];
+
+						if ($uniqid == "BDC") {
+
+							$username = $_POST['choice1'];
+							$mgrid = $_POST['choice2'];
+						  $city = $_POST['choice3'];
+
+							$sqlquery = "SELECT * FROM BDC WHERE BDC_ID = '" . $username . "' AND MGR_ID = " . $mgrid . " AND CITY = '" . $city . "';" ;
+
+							$result = $mysqli->query($sqlquery);
+
+	    				if ($result->num_rows == 1) {
+	        			$row = $result->fetch_assoc();
+								// continue reset password
+							}
+							else{
+								// display error
+							}
+
+						}
+						else if ($uniqid == "EMP"){
+							$username = $_POST['choice1'];
+							$design = $_POST['choice2'];
+						  $doj = $_POST['choice3'];
+
+							$sqlquery = "SELECT * FROM BDC_EMPLOYEE WHERE EMP_ID = '" . $username . "' AND DESIGNATION = '" . $design . "' AND DATE_OF_JOIN = '" . $doj . "';" ;
+
+							$result = $mysqli->query($sqlquery);
+
+	    				if ($result->num_rows == 1) {
+	        			$row = $result->fetch_assoc();
+								// continue reset password
+							}
+							else{
+								// display error
+							}
+						}
+						else if ($uniqid == "DNR"){
+							$username = $_POST['choice1'];
+							$mobno = $_POST['choice2'];
+						  $btype = $_POST['choice3'];
+
+							$sqlquery = "SELECT * FROM DONOR WHERE DONOR_ID = '" . $username . "' AND MOBILE_NUMBER = '" . $mobno . "' AND BLOOD_TYPE = '" . $btype . "';" ;
+
+							$result = $mysqli->query($sqlquery);
+
+	    				if ($result->num_rows == 1) {
+	        			$row = $result->fetch_assoc();
+								// continue reset password
+							}
+							else{
+								// display error
+							}
+						}
+						else if ($uniqid == "MONORG"){
+							$username = $_POST['choice1'];
+							$email = $_POST['choice2'];
+						  $mobno = $_POST['choice3'];
+
+							$sqlquery = "SELECT * FROM MONETARY_ORGANISATION WHERE ORG_ID = '" . $username . "' AND E_MAIL = '" . $email . "' AND CONTACT_NUMBER = '" . $mobno . "';" ;
+
+							$result = $mysqli->query($sqlquery);
+
+	    				if ($result->num_rows == 1) {
+	        			$row = $result->fetch_assoc();
+								// continue reset password
+								echo "c";
+							}
+							else{
+								// display error
+								echo "err";
+							}
+						}
+
+
+					}
+					else{
+				?>
+
 				<form name="forgotFrm" action="" method="POST">
 
 					<div id="op1">
 
-						<select id="uniqid" name="uniqid" onclick="spawnnew()">
+						<select id="uniqid" name="uniqid" onchange="spawnnew()">
 							<option value="">- Select One of the below -</option>
 							<option value="BDC">Blood Donation Centre</option>
 							<option value="EMP">Employee</option>
@@ -67,6 +161,10 @@ require_once("global.php");
 					</div>
 
 				</form>
+
+				<?php
+					}
+				?>
 
 			</div>
 		</section>

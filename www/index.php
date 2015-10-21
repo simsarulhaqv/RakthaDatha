@@ -31,9 +31,20 @@ require_once("global.php");
 		<nav id="head">
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="signup.php">Sign Up</a></li>
-				<li><a href="login.php">Log In</a></li>
-				<li><a href="forgot_pw.php">Forgot Password</a></li>
+				<?php
+					if(isset($_SESSION['username'])){
+				?>
+						<li><a href="logout.php">Log Out</a></li>
+				<?php
+					}
+					else{
+				?>
+						<li><a href="signup.php">Sign Up</a></li>
+						<li><a href="login.php">Log In</a></li>
+						<li><a href="forgot_pw.php">Forgot Password</a></li>
+				<?php
+					}
+				?>
 				<li><a href="unsubscribe.php">Un Subscribe (delete user)</a></li>
 				<li><a href="blood_request.php" class="bordered">Request Blood</a></li>
 				<li><a href="faq.php">Frequently Asked Questions</a></li>

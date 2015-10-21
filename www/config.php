@@ -2,6 +2,6 @@
 
 	$server = "localhost";
 	$sqlid = "root";
-	$sqlpass = "";
+	$sqlpass = "toor";
 	$dbase = "rakthadatha";
 ?>
