@@ -47,11 +47,73 @@ require_once("global.php");
 		<section class="row">
 			<div>
 
+				<?php
+					if(!isset($_POST['password'])){
+				?>
 				<form name="loginFrm" action="" method="POST">
 					<input type="text" name="username" id="username" placeholder="Enter your Login ID"><br>
 					<input type="password" name="password" id="password" placeholder="Enter your secret Password"><br>
 					<input type="submit" value="Login" class="special"><br>
 				</form>
+				<?php
+					}
+					else{
+						$username = $_POST['username'];
+						$password = $_POST['password'];
+						$sqlquery1 = "SELECT * FROM rakthadatha WHERE ADMIN_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
+						$sqlquery2 = "SELECT * FROM bdc WHERE BDC_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
+						$sqlquery3 = "SELECT * FROM bdc_employee WHERE EMP_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
+						$sqlquery4 = "SELECT * FROM donor WHERE DONOR_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
+
+    				$result1 = $mysqli->query($sqlquery1);
+						$result2 = $mysqli->query($sqlquery2);
+						$result3 = $mysqli->query($sqlquery3);
+						$result4 = $mysqli->query($sqlquery4);
+
+    				if ($result1->num_rows == 1) {
+        			$row = $result->fetch_assoc();
+							// this is the admin login
+						  // set session and header
+						}
+						else{
+							if ($result2->num_rows == 1) {
+	        			$row = $result->fetch_assoc();
+								// this is the BDC login
+							  // set session and header
+							}
+							else{
+								if ($result3->num_rows == 1) {
+		        			$row = $result->fetch_assoc();
+									// this is the employee login
+								  // set session and header
+								}
+								else{
+									if ($result4->num_rows == 1) {
+			        			$row = $result->fetch_assoc();
+										// this is the donor login
+									  // set session and header
+									}
+									else{
+										// no success
+										// invalid entry
+										// display the login form once again
+				?>
+										<div class="error message">
+											<p>invalid password</p>
+										</div>
+										<form name="loginFrm" action="" method="POST">
+											<input type="text" name="username" id="username" placeholder="Enter your Login ID"><br>
+											<input type="password" name="password" id="password" placeholder="Enter your secret Password"><br>
+											<input type="submit" value="Login" class="special"><br>
+										</form>
+				<?php
+									}
+								}
+							}
+
+						}
+					}
+				?>
 
 			</div>
 		</section>
