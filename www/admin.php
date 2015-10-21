@@ -18,11 +18,6 @@ require_once("global.php");
 
 	<title> :: RakthaDatha :: </title>
 
-	<script src="js/jquery.1.11.min.js"></script>
-	<script src="js/jquery.fluidbox.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/script.js"></script>
-
 </head>
 <body>
 
@@ -36,9 +31,20 @@ require_once("global.php");
 		<nav id="head">
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="signup.php">Sign Up</a></li>
-				<li><a href="login.php">Log In</a></li>
-				<li><a href="forgot_pw.php">Forgot Password</a></li>
+				<?php
+					if(isset($_SESSION['username'])){
+				?>
+						<li><a href="logout.php">Log Out</a></li>
+				<?php
+					}
+					else{
+				?>
+						<li><a href="signup.php">Sign Up</a></li>
+						<li><a href="login.php">Log In</a></li>
+						<li><a href="forgot_pw.php">Forgot Password</a></li>
+				<?php
+					}
+				?>
 				<li><a href="unsubscribe.php">Un Subscribe (delete user)</a></li>
 				<li><a href="blood_request.php" class="bordered">Request Blood</a></li>
 				<li><a href="faq.php">Frequently Asked Questions</a></li>
@@ -51,23 +57,36 @@ require_once("global.php");
 
 		<section class="row">
 			<div>
+				<?php
+					$username = $_SESSION['username'];
+					$tablename = $_SESSION['tname'];
+					if(empty($tablename)){
+						header('Location: login.php');
+					}
+					else{
+						if($tablename == "ADMIN"){
+							// assumption : only one admin
+							echo "admin";
+						}
+						elseif ($tablename == "BDC") {
+	 						// BDC
+							echo "bdc";
+						}
+						elseif ($tablename == "EMP") {
+	 						echo " bdc employee";
+						}
+						elseif ($tablename == "DNR") {
+	 						echo " donor";
+						}
+						elseif ($tablename == "MONORG") {
+	 						echo " mon org";
+						}
+						else{
+							header('Location: logout.php');
+						}
+					}
 
-				<form name="forgotFrm" action="" method="POST">
-
-					<div id="op1">
-
-						<select id="uniqid" name="uniqid" onclick="spawnnew()">
-							<option value="">- Select One of the below -</option>
-							<option value="BDC">Blood Donation Centre</option>
-							<option value="EMP">Employee</option>
-							<option value="DNR">Donor</option>
-							<option value="MONORG">Monetary Organisation</option>
-						</select>
-
-					</div>
-
-				</form>
-
+				?>
 			</div>
 		</section>
 
@@ -97,6 +116,11 @@ require_once("global.php");
 		</section>
 
 	</div>
+
+	<script src="js/jquery.1.11.min.js"></script>
+	<script src="js/jquery.fluidbox.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/script.js"></script>
 
 </body>
 </html>

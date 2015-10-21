@@ -64,36 +64,73 @@ require_once("global.php");
 						$sqlquery2 = "SELECT * FROM bdc WHERE BDC_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
 						$sqlquery3 = "SELECT * FROM bdc_employee WHERE EMP_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
 						$sqlquery4 = "SELECT * FROM donor WHERE DONOR_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
+						$sqlquery5 = "SELECT * FROM monetary_organisation WHERE ORG_ID = '" . $username . "' AND PASSWORD = '" . $password . "';";
 
     				$result1 = $mysqli->query($sqlquery1);
 						$result2 = $mysqli->query($sqlquery2);
 						$result3 = $mysqli->query($sqlquery3);
 						$result4 = $mysqli->query($sqlquery4);
+						$result5 = $mysqli->query($sqlquery5);
 
     				if ($result1->num_rows == 1) {
-        			$row = $result->fetch_assoc();
+        			$row = $result1->fetch_assoc();
 							// this is the admin login
 						  // set session and header
+							$_SESSION['tname'] = "ADMIN";
+							$_SESSION['username'] = $row['ADMIN_ID'];
+							$_SESSION['city'] = $row['CITY'];
+							header('Location: admin.php');
 						}
 						else{
 							if ($result2->num_rows == 1) {
-	        			$row = $result->fetch_assoc();
+	        			$row = $result2->fetch_assoc();
 								// this is the BDC login
 							  // set session and header
+								$_SESSION['tname'] = "BDC";
+								$_SESSION['username'] = $row['BDC_ID'];
+								$_SESSION['city'] = $row['CITY'];
+								$_SESSION['cname'] = $row['CONTACT_NAME'];
+								$_SESSION['mgrid'] = $row['MGR_ID'];
+								header('Location: admin.php');
 							}
 							else{
 								if ($result3->num_rows == 1) {
-		        			$row = $result->fetch_assoc();
+		        			$row = $result3->fetch_assoc();
 									// this is the employee login
 								  // set session and header
+									$_SESSION['tname'] = "EMP";
+									$_SESSION['username'] = $row['EMP_ID'];
+									//$_SESSION['city'] = $row['CITY'];
+									$_SESSION['fname'] = $row['F_NAME'];
+									$_SESSION['lname'] = $row['L_NAME'];
+									$_SESSION['bdcid'] = $row['BDC_ID'];
+									header('Location: admin.php');
 								}
 								else{
 									if ($result4->num_rows == 1) {
-			        			$row = $result->fetch_assoc();
+			        			$row = $result4->fetch_assoc();
 										// this is the donor login
 									  // set session and header
+										$_SESSION['tname'] = "DNR";
+										$_SESSION['username'] = $row['DONOR_ID'];
+										$_SESSION['city'] = $row['CITY'];
+										$_SESSION['fname'] = $row['F_NAME'];
+										$_SESSION['lname'] = $row['L_NAME'];
+										$_SESSION['bloodtype'] = $row['BLOOD_TYPE'];
+										header('Location: admin.php');
 									}
 									else{
+										if ($result5->num_rows == 1) {
+				        			$row = $result5->fetch_assoc();
+											// this is the mon org login
+										  // set session and header
+											$_SESSION['tname'] = "MONORG";
+											$_SESSION['username'] = $row['ORG_ID'];
+											//$_SESSION['city'] = $row['CITY'];
+											$_SESSION['cname'] = $row['CONTACT_NAME'];
+											header('Location: admin.php');
+										}
+										else{
 										// no success
 										// invalid entry
 										// display the login form once again
@@ -102,8 +139,8 @@ require_once("global.php");
 											<p>invalid password</p>
 										</div>
 										<form name="loginFrm" action="" method="POST">
-											<input type="text" name="username" id="username" placeholder="Enter your Login ID"><br>
-											<input type="password" name="password" id="password" placeholder="Enter your secret Password"><br>
+											<input type="text" name="username" id="username" placeholder="Enter your Login ID" value="<?php echo $_POST['username']; ?>"><br>
+											<input type="password" name="password" id="password" placeholder="Enter your secret Password" value="<?php echo $_POST['username']; ?>"><br>
 											<input type="submit" value="Login" class="special"><br>
 										</form>
 				<?php
@@ -113,6 +150,7 @@ require_once("global.php");
 
 						}
 					}
+				}
 				?>
 
 			</div>

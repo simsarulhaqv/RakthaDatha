@@ -31,7 +31,7 @@ form {
 		outline: 0;
 		padding: 0 1em;
 		text-decoration: none;
-		width: 100%;
+		width: 75%;
 	}
 
 		input[type="text"]:invalid,
@@ -215,7 +215,7 @@ form {
 	     position: fixed;
 	     _position: absolute;
 	     text-shadow: 0 1px 0 rgba(0,0,0,.5);
-	     animation: animate-bg 5s linear infinite;
+	  /*   animation: animate-bg 5s linear infinite; */
 	}
 
 	.info{
@@ -246,7 +246,7 @@ form {
 	     margin: 0;
 	}
 
-	@keyframes animate-bg {
+/*	@keyframes animate-bg {
 	    from {
 	        background-position: 0 0;
 	    }
@@ -254,5 +254,6 @@ form {
 	       background-position: -80px 0;
 	    }
 	}
+	*/
 
 /* ---- */
