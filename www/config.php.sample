@@ -1,7 +1,7 @@
 <?php
 
 	$server = "localhost";
-	$sqlid = "root";
+	$sqlid = "";
 	$sqlpass = "";
 	$dbase = "rakthadatha";
 ?>
