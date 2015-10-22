@@ -31,13 +31,18 @@ function strengthMeter(){
             }
             }
         if(meterMult >= 12){
-            document.getElementById("strength").innerHTML = "Strong";
+          /*  document.getElementById("strength").innerHTML = "Strong"; */
+          document.getElementById("meter").style.backgroundColor = "green";
             }
         else if(k >= 6){
-            document.getElementById("strength").innerHTML = "Medium";
+          /*  document.getElementById("strength").innerHTML = "Medium"; */
+          document.getElementById("meter").style.backgroundColor = "yellow";
         }
-        else
-            document.getElementById("strength").innerHTML = "Weak";
+        else{
+          /*  document.getElementById("strength").innerHTML = "Weak"; */
+          document.getElementById("meter").style.backgroundColor = "red";
         }
 
     }
+
+  }

@@ -52,18 +52,32 @@ function admin_actions(){
     <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter E-Mail\"><br>\
     <input type=\"text\" name=\"btype\" id=\"btype\" placeholder=\"Enter Blood Type\"><br>\
     <div style=\"width:100px;display:inline;\">\
-    <input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Enter Password\" style=\"width:206px\" onkeyup=\"strengthMeter()\">\
-    <span id=\"meter\" style=\"background-color:green;width:10px;height:10px;\"></span>\
+    <input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Enter Password\" style=\"width:100%\" onkeyup=\"strengthMeter()\">\
+    <div id=\"meter\" style=\"background-color:white;width:5px;height:10px;\"></div><div id=\"strength\"></div>\
     </div><br><br><br>\
     <input type=\"Submit\" name=\"adddnr\" value=\"Add Donor\"><br>\
     </form>\
     ";
   }
   else if (x === "remdnr"){
-    y.innerHTML = "";
+    y.innerHTML = "<form name=\"adminFrm\" action=\"remdonor.php\" method=\"POST\">\
+    <input type=\"text\" name=\"uname\" id=\"uname\" placeholder=\"Enter the Donor User ID\"><br>\
+    <input type=\"text\" name=\"mobno\" id=\"mobno\" placeholder=\"Enter mobile number\"><br>\
+    <input type=\"Submit\" name=\"adddnr\" value=\"Remove Donor\"><br>\
+    </form>\
+    ";
   }
   else if (x === "addbdc"){
-    y.innerHTML = "";
+    y.innerHTML = "<form name=\"adminFrm\" action=\"addbdc.php\" method=\"POST\">\
+    <input type=\"text\" name=\"cname\" id=\"cname\" placeholder=\"Enter the name of the person managing this Blood Donation Centre\"><br>\
+    <input type=\"text\" name=\"city\" id=\"city\" placeholder=\"Enter city\"><br>\
+    <div style=\"width:100px;display:inline;\">\
+    <input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Enter Password\" style=\"width:100%\" onkeyup=\"strengthMeter()\">\
+    <div id=\"meter\" style=\"background-color:white;width:5px;height:10px;\"></div><div id=\"strength\"></div>\
+    </div><br><br><br>\
+    <input type=\"Submit\" name=\"adddnr\" value=\"Add Blood Donation Centre\"><br>\
+    </form>\
+    ";
   }
   else if (x === "rembdc"){
     y.innerHTML = "";
