@@ -215,7 +215,8 @@ form {
 	     position: fixed;
 	     _position: absolute;
 	     text-shadow: 0 1px 0 rgba(0,0,0,.5);
-	  /*   animation: animate-bg 5s linear infinite; */
+			 -webkit-animation: animate-bg 5s linear infinite;
+		   -moz-animation: animate-bg 5s linear infinite;
 	}
 
 	.info{
@@ -246,14 +247,13 @@ form {
 	     margin: 0;
 	}
 
-/*	@keyframes animate-bg {
+	@keyframes animate-bg {
 	    from {
 	        background-position: 0 0;
 	    }
 	    to {
-	       background-position: -80px 0;
+	        background-position: -80px 0;
 	    }
 	}
-	*/
 
 /* ---- */

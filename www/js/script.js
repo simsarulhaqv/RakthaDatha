@@ -44,7 +44,8 @@ function admin_actions(){
   var x = document.getElementById('uniqid').value;
   var y = document.getElementById('op1');
   if (x === "addnewdnr"){
-    y.innerHTML = "<input type=\"text\" name=\"fname\" id=\"fname\" placeholder=\"Enter first name\"><br>\
+    y.innerHTML = "<form name=\"adminFrm\" action=\"addnewdonor.php\" method=\"POST\">\
+    <input type=\"text\" name=\"fname\" id=\"fname\" placeholder=\"Enter first name\"><br>\
     <input type=\"text\" name=\"lname\" id=\"lname\" placeholder=\"Enter last name\"><br>\
     <input type=\"text\" name=\"city\" id=\"city\" placeholder=\"Enter city\"><br>\
     <input type=\"text\" name=\"mobno\" id=\"mobno\" placeholder=\"Enter mobile number\"><br>\
@@ -52,25 +53,26 @@ function admin_actions(){
     <input type=\"text\" name=\"btype\" id=\"btype\" placeholder=\"Enter Blood Type\"><br>\
     <input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Enter Password\"><br>\
     <input type=\"Submit\" name=\"adddnr\" value=\"Add Donor\"><br>\
+    </form>\
     ";
   }
   else if (x === "remdnr"){
-
+    y.innerHTML = "";
   }
   else if (x === "addbdc"){
-
+    y.innerHTML = "";
   }
   else if (x === "rembdc"){
-
+    y.innerHTML = "";
   }
   else if (x === "addmonorg"){
-
+    y.innerHTML = "";
   }
   else if (x === "remmonorg"){
-
+    y.innerHTML = "";
   }
   else if (x === "viewalldnr"){
-
+    y.innerHTML = "";
   }
   else{
     y.innerHTML = "";
@@ -102,3 +104,45 @@ function unsubscribe(){
     y.innerHTML = "";
   }
 }
+
+/* http://red-team-design.com/cool-notification-messages-with-css3-jquery/ */
+
+var myMessages = ['info','warning','error','success']; // define the messages types
+function hideAllMessages()
+{
+		 var messagesHeights = new Array(); // this array will store height for each
+
+		 for (i=0; i<myMessages.length; i++)
+		 {
+				  messagesHeights[i] = $('.' + myMessages[i]).outerHeight();
+				  $('.' + myMessages[i]).css('top', -messagesHeights[i]); //move element outside viewport
+		 }
+}
+
+function showMessage(type)
+{
+	$('.'+ type +'-trigger').click(function(){
+		  hideAllMessages();
+		  $('.'+type).animate({top:"0"}, 500);
+	});
+}
+
+$(document).ready(function(){
+
+		 // Initially, hide them all
+		 hideAllMessages();
+
+		 // Show message
+		 for(var i=0;i<myMessages.length;i++)
+		 {
+			showMessage(myMessages[i]);
+		 }
+
+		 // When message is clicked, hide it
+		 $('.message').click(function(){
+				  $(this).animate({top: -$(this).outerHeight()}, 500);
+		  });
+
+});
+
+/* http://red-team-design.com/cool-notification-messages-with-css3-jquery/ */
