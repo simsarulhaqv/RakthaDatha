@@ -51,7 +51,10 @@ function admin_actions(){
     <input type=\"text\" name=\"mobno\" id=\"mobno\" placeholder=\"Enter mobile number\"><br>\
     <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter E-Mail\"><br>\
     <input type=\"text\" name=\"btype\" id=\"btype\" placeholder=\"Enter Blood Type\"><br>\
-    <input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Enter Password\"><br>\
+    <div style=\"width:100px;display:inline;\">\
+    <input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Enter Password\" style=\"width:206px\" onkeyup=\"strengthMeter()\">\
+    <span id=\"meter\" style=\"background-color:green;width:10px;height:10px;\"></span>\
+    </div><br><br><br>\
     <input type=\"Submit\" name=\"adddnr\" value=\"Add Donor\"><br>\
     </form>\
     ";

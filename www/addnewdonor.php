@@ -1,7 +1,7 @@
 <?php
 
 require_once("global.php");
-if(!isset($_POST['password'])){
+if((empty($_POST['password'])) && (empty($_POST['btype'])) && (empty($_POST['mobno'])) && (empty($_POST['email'])) && (empty($_POST['city'])) && (empty($_POST['fname'])) && (empty($_POST['lname']))){
 header('Location: general.php');
 }
 else{
