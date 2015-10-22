@@ -89,7 +89,7 @@ function admin_actions(){
     y.innerHTML = "";
   }
   else if (x === "viewalldnr"){
-    y.innerHTML = "";
+    y.innerHTML = "<a href=\"viewalldnrs.php\">View All Donors</a>";
   }
   else{
     y.innerHTML = "";
