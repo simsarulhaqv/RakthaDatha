@@ -1,6 +1,3 @@
-<?php
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -52,7 +49,3 @@
 	</header>
 
 <div id="content">
-
-<?php
-
-?>

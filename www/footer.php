@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 
 		<section class="row">
 			<div class="col">
@@ -36,7 +32,3 @@
 
 </body>
 </html>
-
-<?php
-
-?>
