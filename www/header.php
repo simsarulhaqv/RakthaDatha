@@ -46,9 +46,10 @@ if(isset($_SESSION['username'])){
             </a>
           </li>
           <?php
+          // the current browser session is logged in as somebody
 					$a = $_SERVER['REQUEST_URI'];
 					if (strpos($a,'index.php') !== false) {
-  					//  echo 'true';
+  					// so redirect to general page if trying to access index.php
 						header('Location: general.php');
 					}
 
