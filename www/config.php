@@ -1,5 +1,4 @@
 <?php
-
 	$server = "localhost";
 	$sqlid = "root";
 	$sqlpass = "toor";
