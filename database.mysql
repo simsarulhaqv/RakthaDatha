@@ -129,7 +129,7 @@ DROP TABLE IF EXISTS `CITY_STATE`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CITY_STATE` (
   `CITY` varchar(100) NOT NULL,
-  `STATE` varchar(100) NOT NULL,
+  `STATE_ABBR` char(2) NOT NULL,
   PRIMARY KEY (`CITY`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -140,6 +140,7 @@ CREATE TABLE `CITY_STATE` (
 
 LOCK TABLES `CITY_STATE` WRITE;
 /*!40000 ALTER TABLE `CITY_STATE` DISABLE KEYS */;
+INSERT INTO `CITY_STATE` VALUES ('Chandigarh','HR'),('Dispur','AS'),('Gandhinagar','GJ'),('Hyderabad','AP'),('Itanagar','AR'),('Panaji','GA'),('Patna','BR'),('Raipur','CG');
 /*!40000 ALTER TABLE `CITY_STATE` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -315,7 +316,7 @@ DROP TABLE IF EXISTS `STATE_COUNTRY`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `STATE_COUNTRY` (
   `STATE` varchar(100) NOT NULL,
-  `COUNTRY` varchar(100) NOT NULL,
+  `STATE_ABBR` char(2) NOT NULL,
   PRIMARY KEY (`STATE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -338,4 +339,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-25 10:08:24
+-- Dump completed on 2015-10-25 10:46:49
