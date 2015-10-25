@@ -165,6 +165,8 @@ $(document).ready(function(){
 /* http://red-team-design.com/cool-notification-messages-with-css3-jquery/ */
 
 function remdonor_adminactions(username,mobilenumber){
+  var a = confirm("really remove the donor with username "+username+" ?");
+  if (a === true){
   var xhttp = new XMLHttpRequest();
 /*  xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -175,5 +177,6 @@ function remdonor_adminactions(username,mobilenumber){
   xhttp.open("POST", "remdonor.php", false);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("uname="+username+"&mobno="+mobilenumber);
+  }
   location.reload();
 }
