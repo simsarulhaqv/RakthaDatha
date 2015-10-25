@@ -106,7 +106,7 @@ require_once("global.php");
 										<form name="loginFrm" action="" method="POST">
 											<input type="text" name="username" id="username" placeholder="Enter your Login ID" value="<?php echo $_POST['username']; ?>"><br>
 											<input type="password" name="password" id="password" placeholder="Enter your secret Password" value="<?php echo $_POST['username']; ?>"><br>
-											<input type="submit" value="Login" class="special"><br>
+											<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit"><i class="material-icons">Login</i></button><br>
 										</form>
 				<?php
 									}
