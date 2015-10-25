@@ -1,12 +1,8 @@
 <?php
-
 require_once("global.php");
-
 ?>
 <?php
-
-		require_once("header.php");
-
+require_once("header.php");
 ?>
 
 		<section class="row">
@@ -16,9 +12,17 @@ require_once("global.php");
 					if(!isset($_POST['password'])){
 				?>
 				<form name="loginFrm" action="" method="POST">
-					<input type="text" name="username" id="username" placeholder="Enter your Login ID"><br>
-					<input type="password" name="password" id="password" placeholder="Enter your secret Password"><br>
-					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit"><i class="material-icons">Login</i></button><br>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="username" name="username" />
+						<label class="mdl-textfield__label" for="sample3">Enter your Login ID</label>
+					</div>
+
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="password" id="password" name="password" />
+						<label class="mdl-textfield__label" for="sample3">Enter your secret Password</label>
+					</div>
+
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit"><i class="material-icons">-></i></button><br>
 				</form>
 				<?php
 					}
@@ -104,9 +108,18 @@ require_once("global.php");
 											<p>invalid password</p>
 										</div>
 										<form name="loginFrm" action="" method="POST">
-											<input type="text" name="username" id="username" placeholder="Enter your Login ID" value="<?php echo $_POST['username']; ?>"><br>
-											<input type="password" name="password" id="password" placeholder="Enter your secret Password" value="<?php echo $_POST['username']; ?>"><br>
-											<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit"><i class="material-icons">Login</i></button><br>
+
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    										<input class="mdl-textfield__input" type="text" id="username" name="username" />
+    										<label class="mdl-textfield__label" for="sample3">Enter your Login ID</label>
+  										</div>
+
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    										<input class="mdl-textfield__input" type="password" id="password" name="password" />
+    										<label class="mdl-textfield__label" for="sample3">Enter your secret Password</label>
+  										</div>
+
+											<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit"><i class="material-icons">-></i></button><br>
 										</form>
 				<?php
 									}
@@ -121,8 +134,6 @@ require_once("global.php");
 			</div>
 		</section>
 
-		<?php
-
-				require_once("footer.php");
-
-		?>
+<?php
+require_once("footer.php");
+?>

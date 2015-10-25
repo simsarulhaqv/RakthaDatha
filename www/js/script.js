@@ -100,10 +100,19 @@ function unsubscribe(){
   var x = document.getElementById('uniqid').value;
   var y = document.getElementById('op1');
   if (x === "DNR"){
-    y.innerHTML = "<input type=\"hidden\" name=\"uniqid\" value=\"DNR\">\
-    <input type=\"text\" name=\"username\" id=\"username\" placeholder=\"Enter your Login ID\"><br>\
-    <input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Enter your secret Password\"><br>\
-    <input type=\"submit\" value=\"Un Subscribe\" class=\"special\"><br>";
+    y.innerHTML = "<div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+    <input class=\"mdl-textfield__input\" type=\"hidden\" name=\"uniqid\" value=\"DNR\">\
+    <label class=\"mdl-textfield__label\" for=\"sample3\"></label>\
+    </div>\
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+      <input class=\"mdl-textfield__input\" type=\"text\" id=\"username\" name=\"username\" />\
+      <label class=\"mdl-textfield__label\" for=\"sample3\">Enter your Login ID</label>\
+    </div>\
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+      <input class=\"mdl-textfield__input\" type=\"password\" id=\"password\" name=\"password\" />\
+      <label class=\"mdl-textfield__label\" for=\"sample3\">Enter your secret Password</label>\
+    </div>\
+    <button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" type=\"Submit\"><i class=\"material-icons\">X</i></button><br>";
   }
   else if (x === "RCV"){
     y.innerHTML = "<input type=\"hidden\" name=\"uniqid\" value=\"RCV\">\

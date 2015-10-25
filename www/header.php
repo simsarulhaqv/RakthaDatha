@@ -15,12 +15,9 @@
     :: RakthaDatha ::
   </title>
 
-  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.red-deep_orange.min.css" />
-  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/material.red-deep_orange.min.css" />
 
-   <script type="text/javascript" src="js/pace-theme-loading-bar.js"></script>
-   <link href="css/pace-theme-loading-bar.css" rel="stylesheet">
+  <link href="css/pace-theme-loading-bar.css" rel="stylesheet">
 
   </head>
   <body>

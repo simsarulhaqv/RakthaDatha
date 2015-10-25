@@ -8,7 +8,7 @@ require_once("header.php");
     <section class="row">
       <div class="photo-grid">
 
-<table>
+<table border="3">
   <tr>
     <th>DONOR_ID</th>
     <th>F_NAME</th>
@@ -96,21 +96,17 @@ if ($rslt->num_rows <= 0) {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Blood Type');
         data.addColumn('number', 'Number of Donors');
-        /*
-        data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
-        ]);
-        */
 
         <?php
           $qry = "select BLOOD_TYPE,COUNT(DONOR_ID) from DONOR GROUP BY BLOOD_TYPE;";
           $rslt = $mysqli->query($qry);
           if ($rslt->num_rows <= 0) {
             echo "Error getting record: " . $mysqli->error;
+        ?>
+            <div class="error message">
+              <p>invalid password</p>
+            </div>
+        <?php
           }
           else {
             echo "data.addRows([";

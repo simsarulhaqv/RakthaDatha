@@ -1,12 +1,8 @@
 <?php
-
 require_once("global.php");
-
 ?>
 <?php
-
 require_once("header.php");
-
 ?>
 
 <section class="row">
@@ -71,9 +67,6 @@ require_once("header.php");
   </div>
 </section>
 
-
 <?php
-
 require_once("footer.php");
-
 ?>
