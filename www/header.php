@@ -15,6 +15,10 @@
     :: RakthaDatha ::
   </title>
 
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.red-deep_orange.min.css" />
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
   </head>
   <body>
 
@@ -34,7 +38,7 @@
         <ul>
           <li>
             <a href="index.php">
-              Home
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">  Home </button>
             </a>
           </li>
           <?php
@@ -42,7 +46,7 @@ if(isset($_SESSION['username'])){
 ?>
           <li>
             <a href="logout.php">
-              Log Out
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">  Log Out </button>
             </a>
           </li>
           <?php
@@ -58,17 +62,17 @@ if(isset($_SESSION['username'])){
 					?>
           <li>
             <a href="signup.php">
-              Sign Up
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">  Sign Up </button>
             </a>
           </li>
           <li>
             <a href="login.php">
-              Log In
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">  Log In </button>
             </a>
           </li>
           <li>
             <a href="forgot_pw.php">
-              Forgot Password
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">  Forgot Password </button>
             </a>
           </li>
 <?php
@@ -76,17 +80,17 @@ if(isset($_SESSION['username'])){
 ?>
           <li>
             <a href="unsubscribe.php">
-              Un Subscribe (delete user)
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">  Un Subscribe (delete user) </button>
             </a>
           </li>
           <li>
-            <a href="blood_request.php" class="bordered">
-              Request Blood
+            <a href="blood_request.php">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--accent">  Request Blood </button>
             </a>
           </li>
           <li>
             <a href="faq.php">
-              Frequently Asked Questions
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">  Frequently Asked Questions </button>
             </a>
           </li>
         </ul>

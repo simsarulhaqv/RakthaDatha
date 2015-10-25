@@ -10,16 +10,34 @@ require_once("header.php");
 
 <table>
   <tr>
-    <th>DONOR_ID</th><th>F_NAME</th><th>L_NAME</th><th>PASSWORD</th><th>BLOOD_TYPE</th><th>MOBILE_NUMBER</th><th>E_MAIL</th><th>CITY</th><th></th>
+    <th>DONOR_ID</th>
+    <th>F_NAME</th>
+    <th>L_NAME</th>
+    <th>BLOOD_TYPE</th>
+    <th>MOBILE_NUMBER</th>
+    <th>E_MAIL</th>
+    <th>CITY</th>
+    <?php
+      if($_SESSION['username'] == "root"){
+        // assumption only one admin
+        echo "<th></th>";
+      }
+    ?>
+
   </tr>
 <?php
 
-$query = "SELECT * FROM DONOR;";
-$result = $mysqli->query($query);
+$qry = "SELECT DONOR_ID,BLOOD_TYPE,MOBILE_NUMBER,E_MAIL,F_NAME,L_NAME,CITY FROM DONOR;";
+$rslt = $mysqli->query($qry);
 
-if ($result->num_rows > 0) {
+if ($rslt->num_rows <= 0) {
+
+  echo "Error getting record: " . $mysqli->error;
+
+} else {
+
   // output data of each row
-    while($row = $result->fetch_assoc()) {
+   while($row = $rslt->fetch_assoc()) {
       echo "<tr>";
       echo "<td>";
       echo $row['DONOR_ID'];
@@ -42,14 +60,14 @@ if ($result->num_rows > 0) {
       echo "<td>";
       echo $row['CITY'];
       echo "</td>";
-      echo "<td>";
-      echo "delete_icon_here";
-      echo "</td>";
-      echo "</tr>":
-
+      if($_SESSION['username'] == "root"){
+        echo "<td>";
+        echo "<button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" onclick=\"remdonor_adminactions('" . $row['DONOR_ID'] . "','" . $row['MOBILE_NUMBER'] . "')\"><i class=\"material-icons\">-</i></button>";
+        echo "</td>";
+      }
+      echo "</tr>";
   }
-} else {
-  echo "Error getting record: " . $mysqli->error;
+
 }
 ?>
 
@@ -76,8 +94,9 @@ if ($result->num_rows > 0) {
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Blood Type');
+        data.addColumn('number', 'Number of Donors');
+        /*
         data.addRows([
           ['Mushrooms', 3],
           ['Onions', 1],
@@ -85,11 +104,30 @@ if ($result->num_rows > 0) {
           ['Zucchini', 1],
           ['Pepperoni', 2]
         ]);
+        */
+
+        <?php
+          $qry = "select BLOOD_TYPE,COUNT(DONOR_ID) from DONOR GROUP BY BLOOD_TYPE;";
+          $rslt = $mysqli->query($qry);
+          if ($rslt->num_rows <= 0) {
+            echo "Error getting record: " . $mysqli->error;
+          }
+          else {
+            echo "data.addRows([";
+            $value = array();
+            while($row = $rslt->fetch_assoc()) {
+              $val = "['".$row["BLOOD_TYPE"]."', ".$row["COUNT(DONOR_ID)"]."]";
+					    array_push($value,$val);
+            }
+            echo implode(",", $value);
+            echo "])";
+          }
+        ?>
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
+        var options = {'title':'Blood Types of Donors'/*,
                        'width':400,
-                       'height':300};
+                       'height':300*/};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
