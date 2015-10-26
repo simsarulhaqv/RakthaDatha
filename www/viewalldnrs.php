@@ -12,7 +12,7 @@ require_once("header.php");
 <h3 style="color:#D50000;">EMPLOYEE DETAILS</h3>
 <br><br><br>
 
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+<table class="mdl-data-table mdl-js-data-table">
 <thead>
 <tr>
 <th>EMPLOYEE ID</th>
@@ -69,7 +69,7 @@ while($row = $rslt->fetch_assoc()) {
   echo "</td>";
   if($_SESSION['username'] == "root"){
     echo "<td>";
-    echo "<button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" onclick=\"remdonor_adminactions('" . $row['DONOR_ID'] . "','" . $row['MOBILE_NUMBER'] . "')\"><i class=\"material-icons\">X</i></button>";
+    echo "<button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" onclick=\"rememp_adminactions('" . $row['EMP_ID'] . "','" . $row['BDC_ID'] . "')\"><i class=\"material-icons\">X</i></button>";
     echo "</td>";
   }
   echo "</tr>";
