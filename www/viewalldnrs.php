@@ -62,7 +62,7 @@ if ($rslt->num_rows <= 0) {
       echo "</td>";
       if($_SESSION['username'] == "root"){
         echo "<td>";
-        echo "<button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" onclick=\"remdonor_adminactions('" . $row['DONOR_ID'] . "','" . $row['MOBILE_NUMBER'] . "')\"><i class=\"material-icons\">-</i></button>";
+        echo "<button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" onclick=\"remdonor_adminactions('" . $row['DONOR_ID'] . "','" . $row['MOBILE_NUMBER'] . "')\"><i class=\"material-icons\">X</i></button>";
         echo "</td>";
       }
       echo "</tr>";
@@ -103,9 +103,9 @@ if ($rslt->num_rows <= 0) {
           if ($rslt->num_rows <= 0) {
             echo "Error getting record: " . $mysqli->error;
         ?>
-            <div class="error message">
-              <p>invalid password</p>
-            </div>
+        <div class="info message">
+          <p>no such record exists</p>
+        </div>
         <?php
           }
           else {
@@ -135,6 +135,64 @@ if ($rslt->num_rows <= 0) {
     <div id="chart_div">
 
     </div>
+
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Blood Type');
+        data.addColumn('number', 'Number of Donors');
+
+        <?php
+          $qry = "SELECT CITY_STATE.CITY, BLOOD_GROUP, BLOOD_AVAILABLE FROM BDC, BDC_BLOOD_AVAILABLITY,CITY_STATE WHERE BDC.BDC_ID = BDC_BLOOD_AVAILABLITY.BDC_ID AND BDC.CITY = CITY_STATE.CITY;";
+          $rslt = $mysqli->query($qry);
+          if ($rslt->num_rows <= 0) {
+            echo "Error getting record: " . $mysqli->error;
+        ?>
+            <div class="info message">
+              <p>no such record exists</p>
+            </div>
+        <?php
+          }
+          else {
+            echo "data.addRows([";
+            $value = array();
+            while($row = $rslt->fetch_assoc()) {
+              $val = "['".$row["CITY"]." ".$row["BLOOD_GROUP"]."', ".$row["BLOOD_AVAILABLE"]."]";
+              array_push($value,$val);
+            }
+            echo implode(",", $value);
+            echo "])";
+          }
+        ?>
+
+        // Set chart options
+        var options = {'title':'Blood Distribution in different Cities In India'/*,
+                       'width':400,
+                       'height':300*/};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div_2'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div_2">
+
+    </div>
+
 
 <?php
 require_once("footer.php");

@@ -24,13 +24,12 @@ DROP TABLE IF EXISTS `BDC`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `BDC` (
   `BDC_ID` char(6) NOT NULL,
-  `CONTACT_NAME` varchar(100) DEFAULT NULL,
+  `BDC_NAME` varchar(100) DEFAULT NULL,
   `PASSWORD` varchar(100) DEFAULT NULL,
   `MGR_ID` int(11) NOT NULL,
   `CITY` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`BDC_ID`),
-  KEY `MGR_ID` (`MGR_ID`),
-  CONSTRAINT `BDC_ibfk_1` FOREIGN KEY (`MGR_ID`) REFERENCES `BDC_EMPLOYEE` (`EMP_ID`)
+  KEY `MGR_ID` (`MGR_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,6 +39,7 @@ CREATE TABLE `BDC` (
 
 LOCK TABLES `BDC` WRITE;
 /*!40000 ALTER TABLE `BDC` DISABLE KEYS */;
+INSERT INTO `BDC` VALUES ('KA0002','KMCT ','ew454;',1,'Bangalore'),('KL0001','NIT Calicut','234ewdf65;',1,'Chennai');
 /*!40000 ALTER TABLE `BDC` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,6 +63,7 @@ CREATE TABLE `BDC_BLOOD_AVAILABLITY` (
 
 LOCK TABLES `BDC_BLOOD_AVAILABLITY` WRITE;
 /*!40000 ALTER TABLE `BDC_BLOOD_AVAILABLITY` DISABLE KEYS */;
+INSERT INTO `BDC_BLOOD_AVAILABLITY` VALUES ('KL0001','O+',10.00),('KA0002','B+',5.00);
 /*!40000 ALTER TABLE `BDC_BLOOD_AVAILABLITY` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,7 +141,7 @@ CREATE TABLE `CITY_STATE` (
 
 LOCK TABLES `CITY_STATE` WRITE;
 /*!40000 ALTER TABLE `CITY_STATE` DISABLE KEYS */;
-INSERT INTO `CITY_STATE` VALUES ('Chandigarh','HR'),('Dispur','AS'),('Gandhinagar','GJ'),('Hyderabad','AP'),('Itanagar','AR'),('Panaji','GA'),('Patna','BR'),('Raipur','CG');
+INSERT INTO `CITY_STATE` VALUES ('Agartala','TR'),('Aizawl','MZ'),('Bangalore','KA'),('Bhopal','MP'),('Bhubaneshwar','OR'),('Chandigarh','HR'),('Chandigarh PB','PB'),('Chennai','TN'),('Daman','DD'),('Delhi','DL'),('Dispur','AS'),('Gandhinagar','GJ'),('Gangtok','SK'),('Hyderabad','AP'),('Imphal','MN'),('Itanagar','AR'),('Jaipur','RJ'),('Kavaratti','LD'),('Kohima','NL'),('Kolkata','WB'),('Lucknow','WB'),('Mumbai','MH'),('Panaji','GA'),('Patna','BR'),('Pondicherry','PY'),('Port Blair','AN'),('Raipur','CG'),('Ranchi','JH'),('Shillong','ML'),('Shimla','HP'),('Silvassa','DH'),('Srinagar','JK'),('Thiruvananthapuram','KL');
 /*!40000 ALTER TABLE `CITY_STATE` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,6 +171,7 @@ CREATE TABLE `DONOR` (
 
 LOCK TABLES `DONOR` WRITE;
 /*!40000 ALTER TABLE `DONOR` DISABLE KEYS */;
+INSERT INTO `DONOR` VALUES ('Kl90001','ew7{};','B+','1234567890','qw@as.net','s','w','Kl'),('KL99000','idcek','O+','9447774199','sanathdavis@gmail.com','sanath','davis','KL');
 /*!40000 ALTER TABLE `DONOR` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -308,13 +310,13 @@ LOCK TABLES `RECEIVER` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `STATE_COUNTRY`
+-- Table structure for table `STATE_ABBRS`
 --
 
-DROP TABLE IF EXISTS `STATE_COUNTRY`;
+DROP TABLE IF EXISTS `STATE_ABBRS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `STATE_COUNTRY` (
+CREATE TABLE `STATE_ABBRS` (
   `STATE` varchar(100) NOT NULL,
   `STATE_ABBR` char(2) NOT NULL,
   PRIMARY KEY (`STATE`)
@@ -322,12 +324,12 @@ CREATE TABLE `STATE_COUNTRY` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `STATE_COUNTRY`
+-- Dumping data for table `STATE_ABBRS`
 --
 
-LOCK TABLES `STATE_COUNTRY` WRITE;
-/*!40000 ALTER TABLE `STATE_COUNTRY` DISABLE KEYS */;
-/*!40000 ALTER TABLE `STATE_COUNTRY` ENABLE KEYS */;
+LOCK TABLES `STATE_ABBRS` WRITE;
+/*!40000 ALTER TABLE `STATE_ABBRS` DISABLE KEYS */;
+/*!40000 ALTER TABLE `STATE_ABBRS` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -339,4 +341,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-25 10:46:49
+-- Dump completed on 2015-10-26  9:43:51
