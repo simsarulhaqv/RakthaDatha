@@ -39,7 +39,7 @@ CREATE TABLE `BDC` (
 
 LOCK TABLES `BDC` WRITE;
 /*!40000 ALTER TABLE `BDC` DISABLE KEYS */;
-INSERT INTO `BDC` VALUES ('KA0002','KMCT ','ew454;',1,'Bangalore'),('KL0001','NIT Calicut','234ewdf65;',1,'Chennai');
+INSERT INTO `BDC` VALUES ('KA0002','KMCT ','ew454;',1,'Bangalore'),('ML002','IIM Kozhikode','{1234343}fgrji;',3,'ML');
 /*!40000 ALTER TABLE `BDC` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,6 +93,7 @@ CREATE TABLE `BDC_EMPLOYEE` (
 
 LOCK TABLES `BDC_EMPLOYEE` WRITE;
 /*!40000 ALTER TABLE `BDC_EMPLOYEE` DISABLE KEYS */;
+INSERT INTO `BDC_EMPLOYEE` VALUES (0,'KA0002','qwerty','asdfgh','CEO','2015-10-08','svfd{}',0.00),(0,'KL0001','Shrimadhav','U K','','2015-10-07','dxfvdfkl',0.00),(3,'KA0002','defrefre','vfrrf','Founder','2015-10-13','edfew',0.00),(4,'KA0002','','','','2015-10-23','',0.00);
 /*!40000 ALTER TABLE `BDC_EMPLOYEE` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -329,6 +330,7 @@ CREATE TABLE `STATE_ABBRS` (
 
 LOCK TABLES `STATE_ABBRS` WRITE;
 /*!40000 ALTER TABLE `STATE_ABBRS` DISABLE KEYS */;
+INSERT INTO `STATE_ABBRS` VALUES ('Andaman and Nicobar Islands','AN'),('Andhra Pradesh','AP'),('Arunachal Pradesh','AR'),('Assam','AS'),('Bihar','BR'),('Chandigarh','CH'),('Chhattisgarh','CG'),('Dadra and Nagar Haveli','DH'),('Daman and Diu','DD'),('Delhi','DL'),('Goa','GA'),('Gujarat','GJ'),('Haryana','HR'),('Himachal Pradesh','HP'),('Jammu and Kashmir','JK'),('Jharkhand','JH'),('Karnataka','KA'),('Kerala','KL'),('Lakshadweep','LD'),('Madhya Pradesh','MP'),('Maharashtra','MH'),('Manipur','MN'),('Meghalaya','ML'),('Mizoram','MZ'),('Nagaland','NL'),('Orissa','OR'),('Pondicherry','PY'),('Punjab','PB'),('Rajasthan','RJ'),('Sikkim','SK'),('Tamil Nadu','TN'),('Tripura','TR'),('Uttar Pradesh','UP'),('Uttarakhand','UK'),('West Bengal','WB');
 /*!40000 ALTER TABLE `STATE_ABBRS` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -341,4 +343,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-26  9:43:51
+-- Dump completed on 2015-10-26 15:22:57

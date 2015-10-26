@@ -89,7 +89,7 @@ function admin_actions(){
     y.innerHTML = "";
   }
   else if (x === "viewalldnr"){
-    y.innerHTML = "<a href=\"viewalldnrs.php\">View All Donors</a>";
+    y.innerHTML = "<a href=\"general_view.php\">View All Donors</a>";
   }
   else{
     y.innerHTML = "";
@@ -186,8 +186,44 @@ function remdonor_adminactions(username,mobilenumber){
   xhttp.open("POST", "remdonor.php", false);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("uname="+username+"&mobno="+mobilenumber);
-  }
   location.reload();
+  }
+
+}
+
+function rememp_adminactions(empid,bdcid){
+  var a = confirm("really remove the employee with username "+empid+" ?");
+  if (a === true){
+  var xhttp = new XMLHttpRequest();
+/*  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  }
+*/
+  xhttp.open("POST", "rembdcemp.php", false);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("empid="+empid+"&bdcid="+bdcid);
+    location.reload();
+  }
+
+}
+
+function rembdc_adminactions(bdcid,bdcname){
+  var a = confirm("really remove the bdc with username "+bdcid+" ?");
+  if (a === true){
+  var xhttp = new XMLHttpRequest();
+/*  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  }
+*/
+  xhttp.open("POST", "rembdc.php", false);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("bdcname="+bdcname+"&bdcid="+bdcid);
+    location.reload();
+  }
 }
 
 /*
