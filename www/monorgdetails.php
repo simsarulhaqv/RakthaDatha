@@ -63,7 +63,7 @@ while($row = $rslt->fetch_assoc()) {
 }
 ?>
 <tr>
-<form method="POST" action="addbdc.php">
+<form method="POST" action="addnewmonorg.php">
   <td>
     <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="password" id="password" name="password" />
@@ -77,51 +77,30 @@ while($row = $rslt->fetch_assoc()) {
 
 <td>
   <div class="mdl-textfield mdl-js-textfield">
-      <input class="mdl-textfield__input" type="text" id="bdcname" name="bdcname" />
-      <label class="mdl-textfield__label" for="bdcname">enter bdc name</label>
+      <input class="mdl-textfield__input" type="text" id="orgname" name="orgname" />
+      <label class="mdl-textfield__label" for="orgname">enter org name</label>
   </div>
 </td>
 
 <td>
-  <div>
-    <select id="mgrid" name="mgrid">
-      <?php
-        $qry = "SELECT * FROM BDC_EMPLOYEE;";
-        $res = $mysqli->query($qry);
-        if($res->num_rows <= 0){
-
-        }
-        else{
-          while($row = $res->fetch_assoc()){
-            echo "<option value=\"" . $row["EMP_ID"] . "\">" . $row['F_NAME'] . $row["L_NAME"] . "</option>";
-          }
-        }
-      ?>
-    </select>
-    <!--  <input class="mdl-textfield__input" type="text" id="city" name="city" /> -->
-      <label class="mdl-textfield__label" for="city">enter mgr id</label>
+  <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="cname" name="cname" />
+      <label class="mdl-textfield__label" for="cname">enter contact name</label>
   </div>
 </td>
 
 <td>
-  <div>
-    <select id="city" name="city">
-      <option value="">Enter City</option>
-      <?php
-        $qry = "SELECT * FROM CITY_STATE;";
-        $res = $mysqli->query($qry);
-        if($res->num_rows <= 0){
+  <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="email" id="email" name="email" />
+      <label class="mdl-textfield__label" for="email">enter e mail</label>
+  </div>
+</td>
 
-        }
-        else{
-          while($row = $res->fetch_assoc()){
-            echo "<option value=\"" . $row["STATE_ABBR"] . "\">" . $row['CITY'] . "</option>";
-          }
-        }
-      ?>
-    </select>
-    <!--  <input class="mdl-textfield__input" type="text" id="city" name="city" /> -->
-      <label class="mdl-textfield__label" for="city">enter city</label>
+<td>
+  <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mobno" name="mobno" />
+      <label class="mdl-textfield__label" for="cname">enter contact number</label>
+      <span class="mdl-textfield__error">error message</span>
   </div>
 </td>
 

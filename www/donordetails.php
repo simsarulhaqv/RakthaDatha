@@ -143,7 +143,7 @@ while($row = $rslt->fetch_assoc()) {
       ?>
     </select>
     <!--  <input class="mdl-textfield__input" type="text" id="city" name="city" /> -->
-      <label class="mdl-textfield__label" for="city">enter city</label>
+    <!--  <label class="mdl-textfield__label" for="city">enter city</label> -->
   </div>
 </td>
 <td>
