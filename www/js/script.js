@@ -221,6 +221,22 @@ function rembdc_adminactions(bdcid,bdcname){
   }
 }
 
+function remmonorg_adminactions(orgid,cnum){
+  var a = confirm("really remove the mon org with username "+orgid+" ?");
+  if (a === true){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      /*document.getElementById("demo").innerHTML = xhttp.responseText;*/
+      location.reload();
+    }
+  }
+  xhttp.open("POST", "remmonorg.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("orgid="+orgid+"&cnum="+cnum);
+  }
+}
+
 /*
   firefox placejolder value issue fix
 */

@@ -19,7 +19,7 @@
 
   <link href="css/pace-theme-loading-bar.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
 
   </head>
   <body>
@@ -85,16 +85,19 @@ if(isset($_SESSION['username'])){
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">  Un Subscribe (delete user) </button>
             </a>
           </li>
+
           <li>
-            <a href="blood_request.php">
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--accent">  Request Blood </button>
+            <a href="blood_request.php" title="Request Blood">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--accent"></button>
             </a>
           </li>
+
           <li>
             <a href="faq.php">
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">  Frequently Asked Questions </button>
             </a>
           </li>
+
         </ul>
       </nav>
 

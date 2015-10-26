@@ -9,7 +9,7 @@ $query = "DELETE FROM BDC WHERE BDC_ID = '" . $bdcid . "' AND BDC_NAME = '" . $b
 
 if ($mysqli->query($query) === TRUE) {
   echo "Record deleted successfully";
-  header('Location: general.php');
+  header('Location: index.php');
 } else {
   echo "Error deleting record: " . $mysqli->error;
 }

@@ -9,7 +9,7 @@ $query = "DELETE FROM DONOR WHERE DONOR_ID = '" . $username . "' AND MOBILE_NUMB
 
 if ($mysqli->query($query) === TRUE) {
   echo "Record deleted successfully";
-  header('Location: general.php');
+  header('Location: index.php');
 } else {
   echo "Error deleting record: " . $mysqli->error;
 }

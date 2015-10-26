@@ -21,38 +21,6 @@ require_once("header.php");
       .
     </p>
 
-    <div class="cf popular-faqs">
-      <h2 class="h2">
-        Most popular FAQs
-      </h2>
-
-      <ul class="popular-list">
-        <li class="media-ob left">
-          <i class="media icon icon-question">
-            Q
-          </i>
-          <i class="media icon arrow">
-          </i>
-          <a href="#faq-who-can-give-blood">
-            Who can give blood?
-          </a>
-        </li>
-        <li class="media-ob">
-          <i class="media icon icon-question">
-            Q
-          </i>
-          <i class="media icon arrow">
-          </i>
-          <a href="#faq-will-be-asked">
-            Will I be asked a lot of questions before I give blood?
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!--
-<div class="clear-left pod-round-wrap">
--->
               <div class="pod pod-accordian">
                 <h2 class="h2">
                   <i class="media icon arrow">

@@ -2,16 +2,17 @@
 <section class="row">
   <div class="photo-grid">
 
-<h3 style="color:#D50000;">BLOOD DONATION CENTRE DETAILS</h3>
+<h3 style="color:#D50000;">MONETARY ORGANISATION DETAILS</h3>
 <br><br><br>
 
 <table class="mdl-data-table mdl-js-data-table">
 <thead>
 <tr>
-<th>BDC ID</th>
-<th>BDC NAME</th>
-<th>MGR ID</th>
-<th>CITY</th>
+<th>ORG ID</th>
+<th>ORG NAME</th>
+<th>CONTACT NAME</th>
+<th>E MAIL</th>
+<th>CONTACT NUMBER</th>
 
 <?php
   if($_SESSION['username'] == "root"){
@@ -24,7 +25,7 @@
 <tbody>
 <?php
 
-$qry = "SELECT * FROM BDC;";
+$qry = "SELECT * FROM MONETARY_ORGANISATION;";
 $rslt = $mysqli->query($qry);
 
 if ($rslt->num_rows <= 0) {
@@ -37,20 +38,23 @@ echo "Error getting record: " . $mysqli->error;
 while($row = $rslt->fetch_assoc()) {
   echo "<tr>";
   echo "<td>";
-  echo $row['BDC_ID'];
+  echo $row['ORG_ID'];
   echo "</td>";
   echo "<td>";
-  echo $row['BDC_NAME'];
+  echo $row['ORG_NAME'];
   echo "</td>";
   echo "<td>";
-  echo $row['MGR_ID'];
+  echo $row['CONTACT_NAME'];
   echo "</td>";
   echo "<td>";
-  echo $row['CITY'];
+  echo $row['E_MAIL'];
+  echo "</td>";
+  echo "<td>";
+  echo $row['CONTACT_NUMBER'];
   echo "</td>";
   if($_SESSION['username'] == "root"){
     echo "<td>";
-    echo "<button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" onclick=\"rembdc_adminactions('" . $row['BDC_ID'] . "','" . $row['BDC_NAME'] . "')\"><i class=\"material-icons\">X</i></button>";
+    echo "<button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" onclick=\"remmonorg_adminactions('" . $row['ORG_ID'] . "','" . $row['CONTACT_NUMBER'] . "')\"><i class=\"material-icons\">X</i></button>";
     echo "</td>";
   }
   echo "</tr>";

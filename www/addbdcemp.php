@@ -26,7 +26,7 @@ else{
 
   if ($mysqli->query($query) === TRUE) {
     echo "Record created successfully";
-    header('Location: general.php');
+    header('Location: index.php');
   } else {
     echo "Error creating record: " . $mysqli->error;
   }

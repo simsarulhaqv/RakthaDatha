@@ -9,6 +9,7 @@ require_once("header.php");
       require_once('empdetails.php');
       require_once('bdcdetails.php');
       require_once('donordetails.php');
+      require_once('monorgdetails.php');
     ?>
 
 

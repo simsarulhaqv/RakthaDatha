@@ -2,10 +2,10 @@
 
 require_once("global.php");
 
-$empid = $_POST['empid'];
-$bdcid = $_POST['bdcid'];
+$orgid = $_POST['orgid'];
+$cnum = $_POST['cnum'];
 
-$query = "DELETE FROM BDC_EMPLOYEE WHERE EMP_ID = '" . $empid . "' AND BDC_ID = '" . $bdcid . "';";
+$query = "DELETE FROM MONETARY_ORGANISATION WHERE ORG_ID = '" . $orgid . "' AND CONTACT_NUMBER = '" . $cnum . "';";
 
 if ($mysqli->query($query) === TRUE) {
   echo "Record deleted successfully";

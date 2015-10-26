@@ -128,6 +128,7 @@ while($row = $rslt->fetch_assoc()) {
 <td>
   <div>
     <select id="city" name="city">
+      <option value="">Enter City</option>
       <?php
         $qry = "SELECT * FROM CITY_STATE;";
         $res = $mysqli->query($qry);

@@ -84,6 +84,7 @@ while($row = $rslt->fetch_assoc()) {
 <td>
   <div>
     <select id="bdcid" name="bdcid">
+      <option value="">Enter BDC ID</option>
       <?php
         $qry = "SELECT * FROM BDC;";
         $res = $mysqli->query($qry);
@@ -122,7 +123,7 @@ while($row = $rslt->fetch_assoc()) {
 <td>
   <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="date" id="doj" name="doj" />
-      <label class="mdl-textfield__label" for="doj">enter date of join</label>
+      <!--<label class="mdl-textfield__label" for="doj">enter date of join</label>-->
   </div>
 </td>
 <td>
