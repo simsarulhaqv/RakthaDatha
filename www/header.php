@@ -54,7 +54,7 @@ if(isset($_SESSION['username'])){
 					$a = $_SERVER['REQUEST_URI'];
 					if (strpos($a,'index.php') !== false) {
   					// so redirect to general page if trying to access index.php
-						header('Location: general.php');
+						header('Location: general_view.php');
 					}
 
 				}

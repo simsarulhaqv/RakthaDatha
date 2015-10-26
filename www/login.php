@@ -48,7 +48,7 @@ require_once("header.php");
 							$_SESSION['tname'] = "ADMIN";
 							$_SESSION['username'] = $row['ADMIN_ID'];
 							$_SESSION['city'] = $row['CITY'];
-							header('Location: general.php');
+							header('Location: general_view.php');
 						}
 						else{
 							if ($result2->num_rows == 1) {
@@ -60,7 +60,7 @@ require_once("header.php");
 								$_SESSION['city'] = $row['CITY'];
 								$_SESSION['cname'] = $row['CONTACT_NAME'];
 								$_SESSION['mgrid'] = $row['MGR_ID'];
-								header('Location: general.php');
+								header('Location: general_view.php');
 							}
 							else{
 								if ($result3->num_rows == 1) {
@@ -73,7 +73,7 @@ require_once("header.php");
 									$_SESSION['fname'] = $row['F_NAME'];
 									$_SESSION['lname'] = $row['L_NAME'];
 									$_SESSION['bdcid'] = $row['BDC_ID'];
-									header('Location: general.php');
+									header('Location: general_view.php');
 								}
 								else{
 									if ($result4->num_rows == 1) {
@@ -86,7 +86,7 @@ require_once("header.php");
 										$_SESSION['fname'] = $row['F_NAME'];
 										$_SESSION['lname'] = $row['L_NAME'];
 										$_SESSION['bloodtype'] = $row['BLOOD_TYPE'];
-										header('Location: general.php');
+										header('Location: general_view.php');
 									}
 									else{
 										if ($result5->num_rows == 1) {
@@ -97,7 +97,7 @@ require_once("header.php");
 											$_SESSION['username'] = $row['ORG_ID'];
 											//$_SESSION['city'] = $row['CITY'];
 											$_SESSION['cname'] = $row['CONTACT_NAME'];
-											header('Location: general.php');
+											header('Location: general_view.php');
 										}
 										else{
 										// no success
