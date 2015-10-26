@@ -29,14 +29,28 @@ else{
   else if ($cur_pres < 1000){
     $donorid = $city . substr($mobile_number,8,2) . $cur_pres;
   }
+  $the_real_city = "";
+  $query2 = "SELECT * FROM CITY_STATE WHERE STATE_ABBR = '" . $city . "';";
+  $result2 = $mysqli->query($query2);
+  if($result2->num_rows == 1){
+    $row = $result2->fetch_assoc();
+    $the_real_city = $row['CITY'];
+  }
+  else{
+    // error
+  }
 
-  $query = "INSERT INTO DONOR VALUES('" . $donorid . "','" . $password . "','" . $blood_type . "','" . $mobile_number . "','" . $e_mail . "','" . $f_name . "','" . $l_name . "','" . $city . "');";
+  $query = "INSERT INTO DONOR VALUES('" . $donorid . "','" . $password . "','" . $blood_type . "','" . $mobile_number . "','" . $e_mail . "','" . $f_name . "','" . $l_name . "','" . $the_real_city . "');";
 
   // incomplete NOT working
 
   if ($mysqli->query($query) === TRUE) {
     echo "Record created successfully";
-    header('Location: general.php');
+    $a = "Please remember the following credentials for future use :<br>USERNAME : " . $donorid . "<br>PASSWORD : " . $password . "<br>";
+    echo $a;
+    echo "redirecting to main page in 10 seconds . . .<br>";
+    echo "<meta http-equiv=\"refresh\" content=\"10; index.php\">";
+
   } else {
     echo "Error creating record: " . $mysqli->error;
   }

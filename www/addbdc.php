@@ -27,7 +27,19 @@ else{
   else if ($cur_pres < 1000){
     $bdcid = $city . $cur_pres;
   }
-  $query = "INSERT INTO BDC VALUES('" . $bdcid . "','" . $bdcname . "','" . $password . "','" . $mgrid . "','" . $city . "');";
+
+  $the_real_city = "";
+  $query2 = "SELECT * FROM CITY_STATE WHERE STATE_ABBR = '" . $city . "';";
+  $result2 = $mysqli->query($query2);
+  if($result2->num_rows == 1){
+    $row = $result2->fetch_assoc();
+    $the_real_city = $row['CITY'];
+  }
+  else{
+    // error
+  }
+
+  $query = "INSERT INTO BDC VALUES('" . $bdcid . "','" . $bdcname . "','" . $password . "','" . $mgrid . "','" . $the_real_city . "');";
 
   // incomplete NOT working
 

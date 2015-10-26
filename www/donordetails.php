@@ -4,7 +4,7 @@
 <h3 style="color:#D50000;">DONOR DETAILS</h3>
 <br><br><br>
 
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+<table class="mdl-data-table mdl-js-data-table">
 <thead>
 <tr>
 <th>DONOR ID</th>
@@ -57,27 +57,12 @@ while($row = $rslt->fetch_assoc()) {
   echo "<td>";
   echo $row['E_MAIL'];
   echo "</td>";
-  ?>
-  <td>
-    <div>
-      <select id="city" name="city">
-        <?php
-          $qry = "SELECT * FROM CITY_STATE;";
-          $res = $mysqli->query($qry);
-          if($res->num_rows <= 0){
+  echo "<td>";
+  echo $row["CITY"];
+  echo "</td>";
 
-          }
-          else{
-            while($row = $res->fetch_assoc()){
-              echo "<option value=\"" . $row["STATE_ABBR"] . "\">" . $row['CITY'] . "</option>";
-            }
-          }
-        ?>
-      </select>
-      <!--  <input class="mdl-textfield__input" type="text" id="city" name="city" /> -->
-        <label class="mdl-textfield__label" for="city">enter city</label>
-    </div>
-  </td>
+  ?>
+
   <?php
   if($_SESSION['username'] == "root"){
     echo "<td>";
@@ -114,10 +99,19 @@ while($row = $rslt->fetch_assoc()) {
 </div>
 </td>
 <td>
-<div class="mdl-textfield mdl-js-textfield">
-  <input class="mdl-textfield__input" type="text" id="btype" name="btype" />
-  <label class="mdl-textfield__label" for="btype">enter blood type</label>
-</div>
+  <div>
+    <select id="btype" name="btype">
+      <option value="">Enter Blood Type</option>
+      <option value="O-">O-</option>
+      <option value="O+">O+</option>
+      <option value="A-">A-</option>
+      <option value="A+">A+</option>
+      <option value="B-">B-</option>
+      <option value="B+">B+</option>
+      <option value="AB-">AB-</option>
+      <option value="AB+">AB+</option>
+    </select>
+  </div>
 </td>
 <td>
 <div class="mdl-textfield mdl-js-textfield">
@@ -132,10 +126,24 @@ while($row = $rslt->fetch_assoc()) {
 </div>
 </td>
 <td>
-<div class="mdl-textfield mdl-js-textfield">
-  <input class="mdl-textfield__input" type="text" id="city" name="city" />
-  <label class="mdl-textfield__label" for="city">enter city</label>
-</div>
+  <div>
+    <select id="city" name="city">
+      <?php
+        $qry = "SELECT * FROM CITY_STATE;";
+        $res = $mysqli->query($qry);
+        if($res->num_rows <= 0){
+
+        }
+        else{
+          while($row = $res->fetch_assoc()){
+            echo "<option value=\"" . $row["STATE_ABBR"] . "\">" . $row['CITY'] . "</option>";
+          }
+        }
+      ?>
+    </select>
+    <!--  <input class="mdl-textfield__input" type="text" id="city" name="city" /> -->
+      <label class="mdl-textfield__label" for="city">enter city</label>
+  </div>
 </td>
 <td>
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit">

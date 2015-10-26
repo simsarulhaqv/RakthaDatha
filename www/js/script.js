@@ -39,7 +39,7 @@ function spawnnew(){
     </select>";
   }
 }
-
+/*
 function admin_actions(){
   var x = document.getElementById('uniqid').value;
   var y = document.getElementById('op1');
@@ -95,7 +95,7 @@ function admin_actions(){
     y.innerHTML = "";
   }
 }
-
+*/
 function unsubscribe(){
   var x = document.getElementById('uniqid').value;
   var y = document.getElementById('op1');
@@ -177,52 +177,47 @@ function remdonor_adminactions(username,mobilenumber){
   var a = confirm("really remove the donor with username "+username+" ?");
   if (a === true){
   var xhttp = new XMLHttpRequest();
-/*  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-      document.getElementById("demo").innerHTML = xhttp.responseText;
+      /*document.getElementById("demo").innerHTML = xhttp.responseText;*/
+      location.reload();
     }
   }
-*/
   xhttp.open("POST", "remdonor.php", false);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("uname="+username+"&mobno="+mobilenumber);
-  location.reload();
   }
-
 }
 
 function rememp_adminactions(empid,bdcid){
   var a = confirm("really remove the employee with username "+empid+" ?");
   if (a === true){
   var xhttp = new XMLHttpRequest();
-/*  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-      document.getElementById("demo").innerHTML = xhttp.responseText;
+      /*document.getElementById("demo").innerHTML = xhttp.responseText;*/
+      location.reload();
     }
   }
-*/
   xhttp.open("POST", "rembdcemp.php", false);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("empid="+empid+"&bdcid="+bdcid);
-    location.reload();
   }
-
 }
 
 function rembdc_adminactions(bdcid,bdcname){
   var a = confirm("really remove the bdc with username "+bdcid+" ?");
   if (a === true){
   var xhttp = new XMLHttpRequest();
-/*  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-      document.getElementById("demo").innerHTML = xhttp.responseText;
+      /*document.getElementById("demo").innerHTML = xhttp.responseText;*/
+      location.reload();
     }
   }
-*/
-  xhttp.open("POST", "rembdc.php", false);
+  xhttp.open("POST", "rembdc.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("bdcname="+bdcname+"&bdcid="+bdcid);
-    location.reload();
   }
 }
 
