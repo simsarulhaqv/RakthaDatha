@@ -60,7 +60,7 @@
 </script>
 <script src="js/material.min.js">
 </script>
-<script type="text/javascript" src="js/pace-theme-loading-bar.js">
+<script src="js/pace-theme-loading-bar.js">
 </script>
 
 </body>
