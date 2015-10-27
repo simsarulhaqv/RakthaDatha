@@ -29,6 +29,9 @@ $row = $result->fetch_assoc();
 }
 else{
 // display error
+?>
+
+<?php
 }
 
 }
@@ -47,6 +50,9 @@ $row = $result->fetch_assoc();
 }
 else{
 // display error
+?>
+
+<?php
 }
 }
 else if ($uniqid == "DNR"){
@@ -64,6 +70,9 @@ $row = $result->fetch_assoc();
 }
 else{
 // display error
+?>
+
+<?php
 }
 }
 else if ($uniqid == "MONORG"){
@@ -83,6 +92,9 @@ echo "c";
 else{
 // display error
 echo "err";
+?>
+
+<?
 }
 }
 
@@ -117,7 +129,7 @@ else{
 
               </form>
 
-              <?php
+<?php
 }
 ?>
 

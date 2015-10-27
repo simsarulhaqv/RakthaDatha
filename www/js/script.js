@@ -100,10 +100,8 @@ function unsubscribe(){
   var x = document.getElementById('uniqid').value;
   var y = document.getElementById('op1');
   if (x === "DNR"){
-    y.innerHTML = "<div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
-    <input class=\"mdl-textfield__input\" type=\"hidden\" name=\"uniqid\" value=\"DNR\">\
-    <label class=\"mdl-textfield__label\" for=\"sample3\"></label>\
-    </div>\
+    y.innerHTML = "\
+    <input type=\"hidden\" name=\"uniqid\" value=\"DNR\">\
     <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
       <input class=\"mdl-textfield__input\" type=\"text\" id=\"username\" name=\"username\" />\
       <label class=\"mdl-textfield__label\" for=\"sample3\">Enter your Login ID</label>\

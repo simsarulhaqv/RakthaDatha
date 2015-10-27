@@ -4,7 +4,7 @@
 <h3 style="color:#D50000;">EMPLOYEE DETAILS</h3>
 <br><br><br>
 
-<table class="mdl-data-table mdl-js-data-table">
+<table class="mdl-data-table mdl-js-data-table full-width">
 <thead>
 <tr>
 <th>EMPLOYEE ID</th>
@@ -69,7 +69,9 @@ while($row = $rslt->fetch_assoc()) {
 
 }
 ?>
+
 <tr>
+
 <form method="POST" action="addbdcemp.php">
   <td>
     <div class="mdl-textfield mdl-js-textfield">
@@ -140,6 +142,7 @@ while($row = $rslt->fetch_assoc()) {
 
 </form>
 </tr>
+
 </tbody>
 </table>
 
