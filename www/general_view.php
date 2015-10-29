@@ -6,10 +6,17 @@ require_once("header.php");
 ?>
 
     <?php
+
       require_once('empdetails.php');
+
+      require_once('emp_queries.php');
+
       require_once('bdcdetails.php');
+
       require_once('donordetails.php');
+
       require_once('monorgdetails.php');
+
     ?>
 
 
@@ -37,7 +44,7 @@ require_once("header.php");
           $qry = "select BLOOD_TYPE,COUNT(DONOR_ID) from DONOR GROUP BY BLOOD_TYPE;";
           $rslt = $mysqli->query($qry);
           if ($rslt->num_rows <= 0) {
-            echo "Error getting record: " . $mysqli->error;
+            echo "/*Error getting record: " . $mysqli->error . "*/";
         ?>
         <div class="info message">
           <p>no such record exists</p>
@@ -94,7 +101,7 @@ require_once("header.php");
           $qry = "SELECT CITY_STATE.CITY, BLOOD_GROUP, BLOOD_AVAILABLE FROM BDC, BDC_BLOOD_AVAILABLITY,CITY_STATE WHERE BDC.BDC_ID = BDC_BLOOD_AVAILABLITY.BDC_ID AND BDC.CITY = CITY_STATE.CITY;";
           $rslt = $mysqli->query($qry);
           if ($rslt->num_rows <= 0) {
-            echo "Error getting record: " . $mysqli->error;
+            echo "/*Error getting record: " . $mysqli->error . "*/";
         ?>
             <div class="info message">
               <p>no such record exists</p>
@@ -128,7 +135,6 @@ require_once("header.php");
     <div id="chart_div_2">
 
     </div>
-
 
 <?php
 require_once("footer.php");
