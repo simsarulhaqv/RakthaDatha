@@ -145,14 +145,16 @@ else{
     echo "b = b + 'Please go to any of the following Blood donation Centres <br>';";
     echo "b = b + 'and tell them your Identification Details. <br><br>';";
 
-    echo "b = b + '<table><tr><th>BDC NAME</th><th>BLOOD GROUP</th><th>AVAILABLE QUANTITY</th></tr>';";
+    echo "b = b + '<table class=\"mdl-data-table mdl-js-data-table full-width\"><thead><tr><th>BDC NAME</th><th>BLOOD GROUP</th><th>AVAILABLE QUANTITY</th></tr></thead><tbody>';";
     while($row = $result3->fetch_assoc()){
       echo "b = b + '<tr>';";
       echo "b = b + '<td>" . $row["BDC_NAME"] . "</td><td>" . $row["BLOOD_GROUP"] . "</td><td>" . $row["BLOOD_AVAILABLE"] . "</td>';";
       echo "b = b + '</tr>';";
     }
-    echo "b = b + '</table>';";
+    echo "b = b + '</tbody></table>';";
     echo "a.innerHTML = b;";
+    echo "</script>";
+
     //echo "<br><hr>";
     //echo "redirecting to main page in 10 seconds . . .<br>";
     //echo "<meta http-equiv=\"refresh\" content=\"10; index.php\">";
