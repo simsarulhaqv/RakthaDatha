@@ -1,7 +1,7 @@
 <?php
 require_once("global.php");
 if((empty($_POST['password'])) && (empty($_POST['btype'])) && (empty($_POST['mobno'])) && (empty($_POST['email'])) && (empty($_POST['city'])) && (empty($_POST['fname'])) && (empty($_POST['lname']))){
-  header('Location: general.php');
+  header('Location: index.php');
 }
 else{
   //donorid
@@ -45,11 +45,11 @@ else{
   // incomplete NOT working
 
   if ($mysqli->query($query) === TRUE) {
-    echo "Record created successfully";
-    $a = "Please remember the following credentials for future use :<br>USERNAME : " . $donorid . "<br>PASSWORD : " . $password . "<br>";
-    echo $a;
-    echo "redirecting to main page in 10 seconds . . .<br>";
-    echo "<meta http-equiv=\"refresh\" content=\"10; index.php\">";
+    //echo "Record created successfully";
+    echo "Please remember the following credentials for future use :<br>";
+    echo "USERNAME : " . $donorid . "<br>PASSWORD : " . $password . "<br><br>";
+    echo "redirecting to main page in 100 seconds . . .<br>";
+    echo "<meta http-equiv=\"refresh\" content=\"100; index.php\">";
 
   } else {
     echo "Error creating record: " . $mysqli->error;

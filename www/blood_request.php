@@ -125,14 +125,24 @@ else{
 
   if ($mysqli->query($query) === TRUE) {
     //echo "Record created successfully";
-    $a = "<h2>IMPORTANT INFO </h3> <br>";
-    echo $a;
+    echo "<h2>IMPORTANT INFO </h2> <br>";
     $query3 = "SELECT BDC.BDC_NAME, BDC_BLOOD_AVAILABLITY.BLOOD_GROUP, BDC_BLOOD_AVAILABLITY.BLOOD_AVAILABLE FROM BDC, RECEIVER, BDC_BLOOD_AVAILABLITY WHERE BDC.CITY = RECEIVER.CITY AND BDC_BLOOD_AVAILABLITY.BDC_ID = BDC.BDC_ID;";
     $result3 = $mysqli->query($query3);
-    while($row = $result3->fetch_assoc()){
-      echo $row["BDC_NAME"] . " " . $row["BLOOD_GROUP"] . " " . $row["BLOOD_AVAILABLE"] . "<br>";
 
+    echo "Respected " . $fname . " " . $lname . ",<br>";
+
+    echo "Your unique ID in the RakthaDatha database is : <strong>" . $rcvid . "</strong><br>";
+
+    echo "Please go to any of the following Blood donation Centres <br>";
+    echo "and tell them your Identification Details. <br><br>";
+
+    echo "<table><tr><th>BDC NAME</th><th>BLOOD GROUP</th><th>AVAILABLE QUANTITY</th></tr>";
+    while($row = $result3->fetch_assoc()){
+      echo "<tr>";
+      echo "<td>" . $row["BDC_NAME"] . "</td><td>" . $row["BLOOD_GROUP"] . "</td><td>" . $row["BLOOD_AVAILABLE"] . "</td>";
+      echo "</tr>";
     }
+    echo "</table>";
     echo "<br><hr>";
     //echo "redirecting to main page in 10 seconds . . .<br>";
     //echo "<meta http-equiv=\"refresh\" content=\"10; index.php\">";

@@ -1,7 +1,7 @@
 <?php
 require_once("global.php");
 if((empty($_POST['password'])) && (empty($_POST['orgname'])) && (empty($_POST['cname'])) && (empty($_POST['email'])) && (empty($_POST['mobno']))){
-  header('Location: general_view.php');
+  header('Location: index.php');
 }
 else{
   //donorid
@@ -23,11 +23,11 @@ else{
   // incomplete NOT working
 
   if ($mysqli->query($query) === TRUE) {
-    echo "Record created successfully";
-    $a = "Please remember the following credentials for future use :<br>USERNAME : " . $orgid . "<br>PASSWORD : " . $password . "<br>";
-    echo $a;
-    echo "redirecting to main page in 10 seconds . . .<br>";
-    echo "<meta http-equiv=\"refresh\" content=\"10; index.php\">";
+    //echo "Record created successfully";
+    echo "Please remember the following credentials for future use :<br>";
+    echo "USERNAME : " . $orgid . "<br>PASSWORD : " . $password . "<br><br>";
+    echo "redirecting to main page in 100 seconds . . .<br>";
+    echo "<meta http-equiv=\"refresh\" content=\"100; index.php\">";
 
   } else {
     echo "Error creating record: " . $mysqli->error;

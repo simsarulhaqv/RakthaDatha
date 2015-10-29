@@ -1,7 +1,7 @@
 <?php
 require_once("global.php");
 if((empty($_POST['password'])) && (empty($_POST['desig'])) && (empty($_POST['doj'])) && (empty($_POST['salary'])) && (empty($_POST['fname'])) && (empty($_POST['lname']))){
-  header('Location: general.php');
+  header('Location: general_view.php');
 }
 else{
   //donorid
