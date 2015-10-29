@@ -7,7 +7,8 @@ require_once("header.php");
 ?>
 
 <section class="row">
-  <div>
+
+  <div id="aftreqblood">
 
     <form name="requestBlood" action="" method="POST">
 
@@ -85,6 +86,7 @@ require_once("header.php");
     </form>
 
   </div>
+
 </section>
 
 <?php
@@ -124,26 +126,34 @@ else{
   // incomplete NOT working
 
   if ($mysqli->query($query) === TRUE) {
+
     //echo "Record created successfully";
-    echo "<h2>IMPORTANT INFO </h2> <br>";
-    $query3 = "SELECT BDC.BDC_NAME, BDC_BLOOD_AVAILABLITY.BLOOD_GROUP, BDC_BLOOD_AVAILABLITY.BLOOD_AVAILABLE FROM BDC, RECEIVER, BDC_BLOOD_AVAILABLITY WHERE BDC.CITY = RECEIVER.CITY AND BDC_BLOOD_AVAILABLITY.BDC_ID = BDC.BDC_ID;";
+
+    echo "<script>";
+    echo "var a = document.getElementById('aftreqblood');";
+
+    //echo "a.innerHTML = '';";
+
+    echo "var b = '<h2>IMPORTANT INFO </h2><br>';";
+    $query3 = "SELECT BDC.BDC_NAME, BDC_BLOOD_AVAILABLITY.BLOOD_GROUP, BDC_BLOOD_AVAILABLITY.BLOOD_AVAILABLE FROM BDC, RECEIVER, BDC_BLOOD_AVAILABLITY WHERE BDC.CITY = RECEIVER.CITY AND BDC_BLOOD_AVAILABLITY.BDC_ID = BDC.BDC_ID AND BDC_BLOOD_AVAILABLITY.BLOOD_AVAILABLE >= " . $amtblood . ";";
     $result3 = $mysqli->query($query3);
 
-    echo "Respected " . $fname . " " . $lname . ",<br>";
+    echo "b = b + 'Respected " . $fname . " " . $lname . ",<br>';";
 
-    echo "Your unique ID in the RakthaDatha database is : <strong>" . $rcvid . "</strong><br>";
+    echo "b = b + 'Your unique ID in the RakthaDatha database is : <strong>" . $rcvid . "</strong><br>';";
 
-    echo "Please go to any of the following Blood donation Centres <br>";
-    echo "and tell them your Identification Details. <br><br>";
+    echo "b = b + 'Please go to any of the following Blood donation Centres <br>';";
+    echo "b = b + 'and tell them your Identification Details. <br><br>';";
 
-    echo "<table><tr><th>BDC NAME</th><th>BLOOD GROUP</th><th>AVAILABLE QUANTITY</th></tr>";
+    echo "b = b + '<table><tr><th>BDC NAME</th><th>BLOOD GROUP</th><th>AVAILABLE QUANTITY</th></tr>';";
     while($row = $result3->fetch_assoc()){
-      echo "<tr>";
-      echo "<td>" . $row["BDC_NAME"] . "</td><td>" . $row["BLOOD_GROUP"] . "</td><td>" . $row["BLOOD_AVAILABLE"] . "</td>";
-      echo "</tr>";
+      echo "b = b + '<tr>';";
+      echo "b = b + '<td>" . $row["BDC_NAME"] . "</td><td>" . $row["BLOOD_GROUP"] . "</td><td>" . $row["BLOOD_AVAILABLE"] . "</td>';";
+      echo "b = b + '</tr>';";
     }
-    echo "</table>";
-    echo "<br><hr>";
+    echo "b = b + '</table>';";
+    echo "a.innerHTML = b;";
+    //echo "<br><hr>";
     //echo "redirecting to main page in 10 seconds . . .<br>";
     //echo "<meta http-equiv=\"refresh\" content=\"10; index.php\">";
 
