@@ -1,4 +1,4 @@
 #!/bin/bash
-mysqldump -u root -p rakthadatha > database.mysql
+mysqldump -u b130253cs -p db_b130253cs > database.mysql
 
 
