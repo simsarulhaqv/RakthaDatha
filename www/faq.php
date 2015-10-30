@@ -13,19 +13,20 @@ require_once("header.php");
       FAQs
     </h1>
 
-    <p>
+    <!--<p>
       If you can&#39;t find an answer to your question you can
       <a href="#contactus" title="Contact RakthaDatha">
         contact us here
       </a>
       .
     </p>
+  -->
 
               <div class="pod pod-accordian">
                 <h2 class="h2">
                   <i class="media icon arrow">
                   </i>
-                  My donor account
+                  Here follows some of the most frequently asked questions:
                 </h2>
                 <ul id="faq-advice-for-men" class="faqs slider">
                   <li>
@@ -40,8 +41,8 @@ require_once("header.php");
                     </h3>
                     <div class="cf">
                       <p>
-                        When you register as a blood donor for the first time, you will be assigned with a unique Donor ID
-                        number. Entering this ID helps us to locate your records more quickly. Your donor number will be printed
+                        When you register as a blood donor for the first time, you will be assigned with a unique Donor ID.
+                        Entering this ID helps us to locate your records more quickly. Your donor number will be printed
                         on your official donor card and any correspondence we send you.
                       </p>
                     </div>
@@ -53,15 +54,14 @@ require_once("header.php");
                         Q
                       </i>
 
-                      <a href="#" title="What if I don't know my Donor ID?" id="faq-dont-know-ID">
+                      <a href="#" title="What if I Forgot My Password" id="faq-dont-know-ID">
                         What if I don't know my Donor ID?
                       </a>
                     </h3>
                     <div class="cf">
                       <p>
-                        If you've forgotten or don't know your Donor ID, don't worry &ndash; we can still find your records by cross-checking
-                        your personal details against our database. Once we've confirmed your identity, your Donor ID will appear in the
-                        'My Account' section of the Donor Portal, so you can access it at any time.
+                        If you've forgotten your password, don't worry &ndash; we can still find your records by cross-checking
+                        your personal details against our database. Please proceed to the FORGOT PASSWORD section in the Home Page.
                       </p>
                     </div>
                   </li>
@@ -79,7 +79,7 @@ require_once("header.php");
                     <div class="cf">
                       <p>
                         Your blood group, like your Donor ID, is printed on your official donors card. It will be determined after your
-                        first donation, and after you donate blood with us it should appear in the 'My Account' section of the Donor Portal.
+                        first donation, and after you donate blood with us it should appear in your own login page.
                       </p>
                     </div>
                   </li>
@@ -96,13 +96,12 @@ require_once("header.php");
                     </h3>
                     <div class="cf">
                       <p>
-                        To update your personal details - such as your address or contact number - select 'personal details' from
-                        the drop-down menu in the upper right-hand corner of the page. Once there you will be able to view and edit any
+                        To update your personal details - such as your address or contact number -login to your account with your Username and Password. Once there you will be able to view and edit any
                         personal information.
                       </p>
                     </div>
                   </li>
-
+              <!-- // not needed
                   <li>
                     <h3>
                       <i>
@@ -122,6 +121,7 @@ require_once("header.php");
                       </p>
                     </div>
                   </li>
+
 
                   <li>
                     <h3>
@@ -165,7 +165,7 @@ require_once("header.php");
                       </p>
                     </div>
                   </li>
-
+                 -->
                   <li>
                     <h3>
                       <i>
@@ -191,7 +191,7 @@ require_once("header.php");
 
                     </div>
                   </li>
-
+              <!--
                   <li>
                     <h3>
                       <i>
@@ -210,7 +210,7 @@ require_once("header.php");
                       </p>
                     </div>
                   </li>
-
+                                  -->
                   <li>
                     <h3>
                       <i>
@@ -218,21 +218,22 @@ require_once("header.php");
                       </i>
 
                       <a href="#" title="Why can't I book an appointment at certain times?" id="faq-appointment-times">
-                        Why can't I book an appointment at certain times?
+                        What is the the time gap I should keep in between donations?
                       </a>
                     </h3>
                     <div class="cf">
                       <p>
-                        We allow donors to give blood every 12 weeks if you're a male, or 16 weeks if you're female. The booking system
-                        will not allow you to book an appointment unless you are eligible to donate.
+                        We allow donors to give blood every 12 weeks if you're a male, or 16 weeks if you're female.This is because the human body needs time to heal after your donation of blood.
                       </p>
+                    <!--
                       <p>
                         If you're a new donor, you can only book one future appointment. Regular donors are able to book multiple
                         appointments using the session finder.
                       </p>
+                      -->
                     </div>
                   </li>
-
+<!--
                   <li>
                     <h3>
                       <i>
@@ -250,7 +251,7 @@ require_once("header.php");
                       </p>
                     </div>
                   </li>
-
+-->
                   <li>
                     <h3>
                       <i>
@@ -264,8 +265,7 @@ require_once("header.php");
                     <div class="cf">
                       <p>
                         If you're aged between 17-66 for a first time donor or aged over 17 for a regular donor, haven't donated
-                        in the past 12 weeks, are in good health, you should be able to donate blood. If you have a medical or travel
-                        concern, select the 'Health' tab for more information on a wide range of conditions that may affect your
+                        in the past 12 weeks, are in good health, you should be able to donate blood.      concern, select the 'Health' tab for more information on a wide range of conditions that may affect your
                         ability to give blood.
                       </p>
                     </div>
@@ -276,7 +276,7 @@ require_once("header.php");
                       <i>
                         Q
                       </i>
-
+<!--
                       <a href="#" title="How do I post my updates to Facebook and Twitter?" id="faq-post-facebook">
                         How do I post my updates to Facebook and Twitter?
                       </a>
@@ -295,21 +295,19 @@ require_once("header.php");
                       <i>
                         Q
                       </i>
-
+-->
                       <a href="#" title="Why can't I use the Donor portal to book appointments in my area?" id="faq-why-book">
                         Why can't I use the Donor portal to book appointments in my area?
                       </a>
                     </h3>
                     <div class="cf">
                       <p>
-                        Our blood donation sessions only operate in England and North Wales. If you live in another part of the United
-                        Kingdom such as Scotland, Northern Ireland or South Wales, we may not be able to provide session information in
-                        your area. However, we are happy to put you in touch with our sister organisations working in these areas, so please
+                        Our blood donation sessions only operate in India. If you live in another part of the World we may not be able to provide our servicesin your area. However, we are happy to put you in touch with our sister organisations working in these areas, so please
                         get in touch if you're not sure where to look.
                       </p>
                     </div>
                   </li>
-
+<!--
                   <li>
                     <h3>
                       <i>
@@ -343,7 +341,7 @@ require_once("header.php");
                   </i>
                   Giving blood
                 </h2>
-
+-->
                 <ul id="faq-giving-blood" class="faqs slider">
                   <li>
                     <h3>
@@ -395,7 +393,7 @@ require_once("header.php");
                       </p>
                     </div>
                   </li>
-
+<!--
                   <li>
                     <h3>
                       <i>
@@ -414,7 +412,7 @@ require_once("header.php");
                       </p>
                     </div>
                   </li>
-
+-->
                   <li>
                     <h3>
                       <i>
@@ -463,7 +461,7 @@ require_once("header.php");
                       <p>
                         Female donors do not have the same levels of stored iron as male donors for lots of reasons. This means
                         that they cannot donate as often as their male counterparts as to do so could potentially put them at risk
-                        of anaemia and NHSBT will never risk the health of donors.
+                        of anaemia and RAKTHA DATHA will never risk the health of donors.
                       </p>
                     </div>
                   </li>
@@ -554,13 +552,13 @@ require_once("header.php");
                         Q
                       </i>
                       <a href="#" title="How do UK donation frequencies compare with other countries who have blood services?" id="faq-uk-donation-frequencies">
-                        How do UK donation frequencies compare with other countries who have blood services?
+                        How do RAKTHA DATHA donation frequencies compare with other countries who have blood services?
                       </a>
                     </h3>
                     <div class="cf">
                       <p>
-                        NHSBT is in line with countries such as Portugal who also allow men to donate 4 times and women 3 times
-                        a year. Although other countries like Belgium, Denmark and Germany allow all donors to give more often, NHSBT
+                        RAKTHA DATHA is in line with countries such as Portugal who also allow men to donate 4 times and women 3 times
+                        a year. Although other countries like Belgium, Denmark and Germany allow all donors to give more often, RAKTHA DATHA
                         remains at the cautious end of the spectrum in order to protect the health of the donor and maintain our
                         excellent record in blood safety.
                       </p>
@@ -584,7 +582,7 @@ require_once("header.php");
                       </p>
 
                       <p>
-                        However, if your acupuncture was performed by NHS staff on NHS premises or was performed outside the NHS
+                        However, if your acupuncture was performed by RAKTHA DATHA staff on RAKTHA DATHA premises or was performed outside the RAKTHA DATHA
                         but by a qualified Health Care Professional, registered with a statutory body, then you may donate.
                       </p>
 
@@ -595,7 +593,7 @@ require_once("header.php");
 
                       <p>
                         If you have had any body piercing including permanent and semi permanent makeup and tattooing, or
-                        acupuncture outside the NHS and not perfomed by a qualified Health Care Professional registered with a
+                        acupuncture outside the RAKTHA DATHA and not perfomed by a qualified Health Care Professional registered with a
                         statutory body, please wait 4 months from your last piercing before donating. If your treatment was between
                         4 and 12 months ago, you must let us know as your donation will need an additional blood test.
                       </p>
@@ -613,7 +611,7 @@ require_once("header.php");
                     </h3>
                     <div class="cf">
                       <p>
-                        This step was implemented by all four of the UK Blood Services on 2nd August 2004. It is a further
+                        This step was implemented by all four of the Indian Blood Services on 2nd August 2004. It is a further
                         precautionary measure against the possible risk of variant Creutzfeldt-Jakob Disease (vCJD) being transmitted
                         by blood and blood products.
                       </p>
@@ -667,7 +665,7 @@ require_once("header.php");
                         Your blood will be taken to one of our blood centres up and down the country. To protect patients, your
                         blood is tested for HIV, hepatitis B and C, certain other infectious diseases and syphilis.
                       </p>
-
+<!--
                       <p>
                         Once the blood has been sorted into its different types, and all the tests are clear, it is then
                         distributed to hospitals to meet their predicted demand. There your blood is matched to a particular
@@ -677,6 +675,7 @@ require_once("header.php");
                         </a>
                         .
                       </p>
+  -->
                     </div>
                   </li>
 
@@ -763,7 +762,7 @@ require_once("header.php");
                     <div class="cf">
                       <p>
                         If you become unwell within two weeks of your donation, or if you believe there is any reason why your
-                        blood should not be transfused to a patient, please call us on 0300 123 23 23.
+                        blood should not be transfused to a patient, please call us on one of the emergency numbers given in the home page.
                       </p>
                     </div>
                   </li>
@@ -782,7 +781,7 @@ require_once("header.php");
                       <p>
                         You need to take it easy for a few hours after giving blood, but if you do feel faint or dizzy, lie
                         down immediately with your legs raised. Ideally, let someone else know if you are feeling unwell. If
-                        faintness persists after your donation, don't hesitate to call us on 0300 123 23 23 to let us know and
+                        faintness persists after your donation, don't hesitate to call us on one of the emergency numbers in the home page to let us know and
                         we will be able to advise you further.
                       </p>
                     </div>
