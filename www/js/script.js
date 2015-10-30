@@ -104,25 +104,39 @@ function unsubscribe(){
     <input type=\"hidden\" name=\"uniqid\" value=\"DNR\">\
     <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
       <input class=\"mdl-textfield__input\" type=\"text\" id=\"username\" name=\"username\" />\
-      <label class=\"mdl-textfield__label\" for=\"sample3\">Enter your Login ID</label>\
+      <label class=\"mdl-textfield__label\" for=\"username\">Enter your Login ID</label>\
     </div>\
     <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
       <input class=\"mdl-textfield__input\" type=\"password\" id=\"password\" name=\"password\" />\
-      <label class=\"mdl-textfield__label\" for=\"sample3\">Enter your secret Password</label>\
+      <label class=\"mdl-textfield__label\" for=\"password\">Enter your secret Password</label>\
     </div>\
     <button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" type=\"Submit\"><i class=\"material-icons\">X</i></button><br>";
   }
   else if (x === "RCV"){
-    y.innerHTML = "<input type=\"hidden\" name=\"uniqid\" value=\"RCV\">\
-    <input type=\"text\" name=\"bldgrp\" id=\"bldgrp\" placeholder=\"Enter your Blood Group\"><br>\
-    <input type=\"text\" name=\"mobno\" id=\"mobno\" placeholder=\"Enter your Mobile Number\"><br>\
-    <input type=\"submit\" value=\"Un Subscribe\" class=\"special\"><br>";
+    y.innerHTML = "\
+    <input type=\"hidden\" name=\"uniqid\" value=\"DNR\">\
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+      <input class=\"mdl-textfield__input\" type=\"text\" id=\"bldgrp\" name=\"bldgrp\" />\
+      <label class=\"mdl-textfield__label\" for=\"bldgrp\">Enter your Blood Group</label>\
+    </div>\
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+      <input class=\"mdl-textfield__input\" type=\"text\" id=\"mobno\" name=\"mobno\" />\
+      <label class=\"mdl-textfield__label\" for=\"mobno\">Enter your Mobile Number</label>\
+    </div>\
+    <button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" type=\"Submit\"><i class=\"material-icons\">X</i></button><br>";
   }
   else if (x === "MONORG"){
-    y.innerHTML = "<input type=\"hidden\" name=\"uniqid\" value=\"MONORG\">\
-    <input type=\"text\" name=\"username\" id=\"username\" placeholder=\"Enter your Login ID\"><br>\
-    <input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Enter your secret Password\"><br>\
-    <input type=\"submit\" value=\"Un Subscribe\" class=\"special\"><br>";
+    y.innerHTML = "\
+    <input type=\"hidden\" name=\"uniqid\" value=\"DNR\">\
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+      <input class=\"mdl-textfield__input\" type=\"text\" id=\"username\" name=\"username\" />\
+      <label class=\"mdl-textfield__label\" for=\"username\">Enter your Login ID</label>\
+    </div>\
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+      <input class=\"mdl-textfield__input\" type=\"password\" id=\"password\" name=\"password\" />\
+      <label class=\"mdl-textfield__label\" for=\"password\">Enter your secret Password</label>\
+    </div>\
+    <button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" type=\"Submit\"><i class=\"material-icons\">X</i></button><br>";
   }
   else{
     y.innerHTML = "";

@@ -14,12 +14,12 @@ require_once("header.php");
 				<form name="loginFrm" action="" method="POST">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" id="username" name="username" />
-						<label class="mdl-textfield__label" for="sample3">Enter your Login ID</label>
+						<label class="mdl-textfield__label" for="username">Enter your Login ID</label>
 					</div>
 
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="password" id="password" name="password" />
-						<label class="mdl-textfield__label" for="sample3">Enter your secret Password</label>
+						<label class="mdl-textfield__label" for="password">Enter your secret Password</label>
 					</div>
 
 					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit"><i class="material-icons">-></i></button><br>
@@ -110,14 +110,14 @@ require_once("header.php");
 										<form name="loginFrm" action="" method="POST">
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    										<input class="mdl-textfield__input" type="text" id="username" name="username" />
-    										<label class="mdl-textfield__label" for="sample3">Enter your Login ID</label>
-  										</div>
+												<input class="mdl-textfield__input" type="text" id="username" name="username" />
+												<label class="mdl-textfield__label" for="username">Enter your Login ID</label>
+											</div>
 
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    										<input class="mdl-textfield__input" type="password" id="password" name="password" />
-    										<label class="mdl-textfield__label" for="sample3">Enter your secret Password</label>
-  										</div>
+												<input class="mdl-textfield__input" type="password" id="password" name="password" />
+												<label class="mdl-textfield__label" for="password">Enter your secret Password</label>
+											</div>
 
 											<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit"><i class="material-icons">-></i></button><br>
 										</form>
