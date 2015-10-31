@@ -26,8 +26,8 @@ else{
     //echo "Record created successfully";
     echo "Please remember the following credentials for future use :<br>";
     echo "USERNAME : " . $orgid . "<br>PASSWORD : " . $password . "<br><br>";
-    echo "redirecting to main page in 100 seconds . . .<br>";
-    echo "<meta http-equiv=\"refresh\" content=\"100; index.php\">";
+  //  echo "redirecting to main page in 100 seconds . . .<br>";
+  //  echo "<meta http-equiv=\"refresh\" content=\"100; index.php\">";
 
   } else {
     echo "Error creating record: " . $mysqli->error;
