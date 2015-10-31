@@ -7,11 +7,11 @@ require_once("header.php");
 
 <div class="row">
 
-  <div class="col-md-6">
+  <div class="col-md-6" id="dnrsignup">
 
     <h3 style="color:#D50000;">Register as DONOR</h3>
 
-    <form method="POST" action="addnewdonor.php">
+    <form method="POST" id="frmdnr">
 
       <div class="mdl-textfield mdl-js-textfield">
         <input class="mdl-textfield__input" type="text" id="fname" name="fname" />
@@ -90,7 +90,7 @@ require_once("header.php");
 
       <br><br><br>
 
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="reg_donor()">
         Register As Donor
       </button>
 
@@ -101,11 +101,11 @@ require_once("header.php");
 
 <!-- donor end-->
 
-  <div class="col-md-6">
+  <div class="col-md-6" id="monorgsignup">
 
     <h3 style="color:#D50000;">Register as <br><br> MONETARY ORGANISATION</h3>
 
-    <form method="POST" action="addnewmonorg.php">
+    <form method="POST" id="frmmonorg">
 
       <div class="mdl-textfield mdl-js-textfield">
         <input class="mdl-textfield__input" type="text" id="orgname" name="orgname" />
@@ -146,7 +146,7 @@ require_once("header.php");
 <br><br><br>
 
 <!-- Accent-colored raised button -->
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="reg_monorg()">
   Register As Monetary Organisation
 </button>
 

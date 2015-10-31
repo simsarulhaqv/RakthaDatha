@@ -1,3 +1,4 @@
+
 function spawnnew(){
   var x = document.getElementById('uniqid').value;
   var y = document.getElementById('op1');
@@ -74,6 +75,7 @@ function spawnnew(){
     </select>";
   }
 }
+
 /*
 function admin_actions(){
   var x = document.getElementById('uniqid').value;
@@ -131,6 +133,7 @@ function admin_actions(){
   }
 }
 */
+
 function unsubscribe(){
   var x = document.getElementById('uniqid').value;
   var y = document.getElementById('op1');
@@ -181,19 +184,16 @@ function unsubscribe(){
 /* http://red-team-design.com/cool-notification-messages-with-css3-jquery/ */
 
 var myMessages = ['info','warning','error','success']; // define the messages types
-function hideAllMessages()
-{
+function hideAllMessages(){
 		 var messagesHeights = new Array(); // this array will store height for each
 
-		 for (i=0; i<myMessages.length; i++)
-		 {
+		 for (i=0; i<myMessages.length; i++){
 				  messagesHeights[i] = $('.' + myMessages[i]).outerHeight();
 				  $('.' + myMessages[i]).css('top', -messagesHeights[i]); //move element outside viewport
 		 }
 }
 
-function showMessage(type)
-{
+function showMessage(type){
 	$('.'+ type +'-trigger').click(function(){
 		  hideAllMessages();
 		  $('.'+type).animate({top:"0"}, 500);
@@ -206,8 +206,7 @@ $(document).ready(function(){
 		 hideAllMessages();
 
 		 // Show message
-		 for(var i=0;i<myMessages.length;i++)
-		 {
+		 for(var i=0;i<myMessages.length;i++){
 			showMessage(myMessages[i]);
 		 }
 
