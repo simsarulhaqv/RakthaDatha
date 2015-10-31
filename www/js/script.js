@@ -3,10 +3,19 @@ function spawnnew(){
   var y = document.getElementById('op1');
   if (x === "BDC"){
     y.innerHTML = "<input type=\"hidden\" name=\"uniqid\" value=\"BDC\">\
-    <input type=\"text\" name=\"choice1\" placeholder=\"Enter your User Name\"><br>\
-    <input type=\"text\" name=\"choice2\" placeholder=\"Enter the Manager ID\"><br>\
-    <input type=\"text\" name=\"choice3\" placeholder=\"Enter the Blood Donation Centre City\"><br>\
-    <input type=\"Submit\" name=\"forgotPwd\" value=\"Reset Password\"><br>";
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+	<input class=\"mdl-textfield__input\" type=\"text\" id=\"choice1\" name=\"choice1\" />\
+	<label class=\"mdl-textfield__label\" for=\"choice1\">Enter your User Name</label>\
+	</div><br>\
+	<div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+	<input class=\"mdl-textfield__input\" type=\"text\" id=\"choice2\" name=\"choice2\" />\
+	<label class=\"mdl-textfield__label\" for=\"choice2\">Enter the Manager ID</label>\
+	</div><br>\
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+	<input class=\"mdl-textfield__input\" type=\"text\" id=\"choice3\" name=\"choice3\" />\
+	<label class=\"mdl-textfield__label\" for=\"choice3\">Enter the Blood Donation Centre City</label>\
+	</div><br>\
+	<button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" name=\"forgotPwd\" type=\"Submit\"><i class=\"material-icons\">?</i></button><br>";
   }
   else if (x === "EMP"){
     y.innerHTML = "<input type=\"hidden\" name=\"uniqid\" value=\"EMP\">\

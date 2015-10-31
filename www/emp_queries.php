@@ -1,6 +1,7 @@
 <section class="row">
   <div class="photo-grid">
-
+<h3 style="color:#D50000;">EMPLOYEE QUERIES</h3>
+<br>
     <form name="qry1" id="qry1" method="POST">
       <select id="city1" name="city" onchange="change_city_1()">
         <option value="">Select your City</option>

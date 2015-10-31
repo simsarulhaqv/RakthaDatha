@@ -62,9 +62,13 @@ while($row = $rslt->fetch_assoc()) {
 
 }
 ?>
-<tr>
+</tbody>
+</table>
+
+<h3 style="color:#D50000;">MONETARY ORGANISATION DETAILS</h3>
+<br>
 <form method="POST" action="addnewmonorg.php">
-  <td>
+  
     <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="password" id="password" name="password" />
       <label class="mdl-textfield__label" for="password">enter password</label>
@@ -73,16 +77,12 @@ while($row = $rslt->fetch_assoc()) {
         <div id="strength"></div>
       </span>
   </div>
-</td>
 
-<td>
   <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="text" id="orgname" name="orgname" />
       <label class="mdl-textfield__label" for="orgname">enter org name</label>
   </div>
-</td>
 
-<td>
   <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="text" id="cname" name="cname" />
       <label class="mdl-textfield__label" for="cname">enter contact name</label>
@@ -94,26 +94,19 @@ while($row = $rslt->fetch_assoc()) {
       <input class="mdl-textfield__input" type="email" id="email" name="email" />
       <label class="mdl-textfield__label" for="email">enter e mail</label>
   </div>
-</td>
 
-<td>
   <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mobno" name="mobno" />
       <label class="mdl-textfield__label" for="cname">enter contact number</label>
       <span class="mdl-textfield__error">error message</span>
   </div>
-</td>
 
-<td>
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit">
 <i class="material-icons">+</i>
 </button>
-</td>
 
 </form>
-</tr>
-</tbody>
-</table>
+
 
 </div>
 </section>

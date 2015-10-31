@@ -74,9 +74,13 @@ while($row = $rslt->fetch_assoc()) {
 
 }
 ?>
-<tr>
+</tbody>
+</table>
+<br><br>
+<h3 style="color:#D50000;">DONOR DETAILS</h3>
+<br><br>
 <form method="POST" action="addnewdonor.php">
-<td>
+
 <div class="mdl-textfield mdl-js-textfield">
   <input class="mdl-textfield__input" type="password" id="password" name="password" />
   <label class="mdl-textfield__label" for="password">enter password</label>
@@ -85,20 +89,17 @@ while($row = $rslt->fetch_assoc()) {
     <div id="strength"></div>
   </span>
 </div>
-</td>
-<td>
+
 <div class="mdl-textfield mdl-js-textfield">
   <input class="mdl-textfield__input" type="text" id="fname" name="fname" />
   <label class="mdl-textfield__label" for="fname">enter first name</label>
 </div>
-</td>
-<td>
+
 <div class="mdl-textfield mdl-js-textfield">
   <input class="mdl-textfield__input" type="text" id="lname" name="lname" />
   <label class="mdl-textfield__label" for="lname">enter last name</label>
 </div>
-</td>
-<td>
+
   <div>
     <select id="btype" name="btype">
       <option value="">Enter Blood Type</option>
@@ -112,20 +113,17 @@ while($row = $rslt->fetch_assoc()) {
       <option value="AB+">AB+</option>
     </select>
   </div>
-</td>
-<td>
+
 <div class="mdl-textfield mdl-js-textfield">
   <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mobno" name="mobno" />
   <label class="mdl-textfield__label" for="mobno">enter mobile number</label>
 </div>
-</td>
-<td>
+
 <div class="mdl-textfield mdl-js-textfield">
   <input class="mdl-textfield__input" type="text" id="email" name="email" />
   <label class="mdl-textfield__label" for="email">enter e mail address</label>
 </div>
-</td>
-<td>
+
   <div>
     <select id="city" name="city">
       <option value="">Enter City</option>
@@ -145,17 +143,12 @@ while($row = $rslt->fetch_assoc()) {
     <!--  <input class="mdl-textfield__input" type="text" id="city" name="city" /> -->
     <!--  <label class="mdl-textfield__label" for="city">enter city</label> -->
   </div>
-</td>
-<td>
+
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit">
 <i class="material-icons">+</i>
 </button>
-</td>
 
 </form>
-</tr>
-</tbody>
-</table>
-
+<br><br>
 </div>
 </section>

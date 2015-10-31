@@ -1,6 +1,9 @@
 <section class="row">
   <div class="photo-grid">
 
+<h3 style="color:#D50000;">BLOOD DONATION CENTRE DETAILS</h3>
+<br><br><br>
+
     <form name="qry3" id="qry3" method="POST">
 
       Which city

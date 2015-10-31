@@ -58,7 +58,10 @@ while($row = $rslt->fetch_assoc()) {
 
 }
 ?>
-<tr>
+</tbody>
+</table>
+
+<h3 style="color:#D50000;">BLOOD DONATION CENTRE DETAILS</h3><br>
 <form method="POST" action="addbdc.php">
   <td>
     <div class="mdl-textfield mdl-js-textfield">
@@ -69,16 +72,12 @@ while($row = $rslt->fetch_assoc()) {
         <div id="strength"></div>
       </span>
   </div>
-</td>
 
-<td>
   <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="text" id="bdcname" name="bdcname" />
       <label class="mdl-textfield__label" for="bdcname">enter bdc name</label>
   </div>
-</td>
 
-<td>
   <div>
     <select id="mgrid" name="mgrid">
       <option value="">Enter MGR ID</option>
@@ -98,9 +97,7 @@ while($row = $rslt->fetch_assoc()) {
     <!--  <input class="mdl-textfield__input" type="text" id="city" name="city" /> -->
     <!--  <label class="mdl-textfield__label" for="city">enter mgr id</label> -->
   </div>
-</td>
 
-<td>
   <div>
     <select id="city" name="city">
       <option value="">Enter City</option>
@@ -120,18 +117,13 @@ while($row = $rslt->fetch_assoc()) {
     <!--  <input class="mdl-textfield__input" type="text" id="city" name="city" /> -->
     <!--  <label class="mdl-textfield__label" for="city">enter city</label> -->
   </div>
-</td>
 
-<td>
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit">
 <i class="material-icons">+</i>
 </button>
-</td>
 
 </form>
-</tr>
-</tbody>
-</table>
+
 
 </div>
 </section>

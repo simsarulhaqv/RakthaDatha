@@ -69,11 +69,13 @@ while($row = $rslt->fetch_assoc()) {
 
 }
 ?>
+</tbody>
+</table>
 
-<tr>
-
+<h3 style="color:#D50000;">INSERT EMPLOYEE DETAILS</h3>
+<br>
 <form method="POST" action="addbdcemp.php">
-  <td>
+  
     <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="password" id="password" name="password" />
       <label class="mdl-textfield__label" for="password">enter password</label>
@@ -82,8 +84,7 @@ while($row = $rslt->fetch_assoc()) {
         <div id="strength"></div>
       </span>
   </div>
-</td>
-<td>
+
   <div>
     <select id="bdcid" name="bdcid">
       <option value="">Enter BDC ID</option>
@@ -103,48 +104,38 @@ while($row = $rslt->fetch_assoc()) {
     <!--  <input class="mdl-textfield__input" type="text" id="city" name="city" /> -->
     <!--  <label class="mdl-textfield__label" for="city">enter bdc id</label> -->
   </div>
-</td>
-<td>
+
   <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="text" id="fname" name="fname" />
       <label class="mdl-textfield__label" for="fname">enter first name</label>
   </div>
-</td>
-<td>
+
   <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="text" id="lname" name="lname" />
       <label class="mdl-textfield__label" for="lname">enter last name</label>
   </div>
-</td>
-<td>
+
   <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="text" id="desig" name="desig" />
       <label class="mdl-textfield__label" for="desig">enter designation</label>
   </div>
-</td>
-<td>
+
   <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="date" id="doj" name="doj" />
       <!--<label class="mdl-textfield__label" for="doj">enter date of join</label>-->
   </div>
-</td>
-<td>
+
   <div class="mdl-textfield mdl-js-textfield">
       <input class="mdl-textfield__input" type="text" id="sal" name="sal" />
       <label class="mdl-textfield__label" for="sal">enter salary</label>
   </div>
-</td>
-<td>
+
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="Submit">
 <i class="material-icons">+</i>
 </button>
-</td>
+
 
 </form>
-</tr>
-
-</tbody>
-</table>
 
 </div>
 </section>
