@@ -19,24 +19,50 @@ function spawnnew(){
   }
   else if (x === "EMP"){
     y.innerHTML = "<input type=\"hidden\" name=\"uniqid\" value=\"EMP\">\
-    <input type=\"text\" name=\"choice1\" placeholder=\"Enter your User Name\"><br>\
-    <input type=\"text\" name=\"choice2\" placeholder=\"Enter your designation\"><br>\
-    When did you join the Blood Donation Centre ? <input type=\"date\" name=\"choice3\" placeholder=\"When did you join the Blood Donation Centre ?\"><br>\
-    <input type=\"Submit\" name=\"forgotPwd\" value=\"Reset Password\"><br>";
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+	<input class=\"mdl-textfield__input\" type=\"text\" id=\"choice1\" name=\"choice1\" />\
+	<label class=\"mdl-textfield__label\" for=\"choice1\">Enter your User Name</label>\
+	</div><br>\
+  <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+  <input class=\"mdl-textfield__input\" type=\"text\" id=\"choice2\" name=\"choice2\" />\
+  <label class=\"mdl-textfield__label\" for=\"choice2\">Enter your designation</label>\
+  </div><br>\
+    When did you join the Blood Donation Centre ? <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+	<input class=\"mdl-textfield__input\" type=\"date\" id=\"choice3\" name=\"choice3\" />\
+	</div><br>\
+    <button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" name=\"forgotPwd\" type=\"Submit\"><i class=\"material-icons\">?</i></button><br>";
   }
   else if (x === "DNR"){
     y.innerHTML = "<input type=\"hidden\" name=\"uniqid\" value=\"DNR\">\
-    <input type=\"text\" name=\"choice1\" placeholder=\"Enter your User Name\"><br>\
-    <input type=\"text\" name=\"choice2\" placeholder=\"Enter your Mobile Number\"><br>\
-    <input type=\"text\" name=\"choice3\" placeholder=\"Enter your Blood Group (Example : A+ / A- / B+ / B- / . . .)\"><br>\
-    <input type=\"Submit\" name=\"forgotPwd\" value=\"Reset Password\"><br>";
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+	<input class=\"mdl-textfield__input\" type=\"text\" id=\"choice1\" name=\"choice1\" />\
+	<label class=\"mdl-textfield__label\" for=\"choice1\">Enter your User Name</label>\
+	</div><br>\
+  <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+  <input class=\"mdl-textfield__input\" type=\"text\" id=\"choice2\" name=\"choice2\" />\
+  <label class=\"mdl-textfield__label\" for=\"choice2\">Enter your mobile number</label>\
+  </div><br>\
+  <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+<input class=\"mdl-textfield__input\" type=\"date\" id=\"choice3\" name=\"choice3\" />\
+<label class=\"mdl-textfield__label\" for=\"choice3\">Enter your Blood Group (Example : A+ / A- / B+ / B- / . . .)</label>\
+</div><br>\
+  <button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" name=\"forgotPwd\" type=\"Submit\"><i class=\"material-icons\">?</i></button><br>";
   }
   else if (x === "MONORG"){
     y.innerHTML = "<input type=\"hidden\" name=\"uniqid\" value=\"MONORG\">\
-    <input type=\"text\" name=\"choice1\" placeholder=\"Enter your User Name\"><br>\
-    <input type=\"email\" name=\"choice2\" placeholder=\"Enter your E-Mail ID\"><br>\
-    <input type=\"text\" name=\"choice3\" placeholder=\"Enter your mobile number\"><br>\
-    <input type=\"Submit\" name=\"forgotPwd\" value=\"Reset Password\"><br>";
+    <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+	<input class=\"mdl-textfield__input\" type=\"text\" id=\"choice1\" name=\"choice1\" />\
+	<label class=\"mdl-textfield__label\" for=\"choice1\">Enter your User Name</label>\
+	</div><br>\
+  <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+  <input class=\"mdl-textfield__input\" type=\"email\" id=\"choice2\" name=\"choice2\" />\
+  <label class=\"mdl-textfield__label\" for=\"choice2\">Enter your e mail address</label>\
+  </div><br>\
+  <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\
+  <input class=\"mdl-textfield__input\" type=\"text\" id=\"choice3\" name=\"choice3\" />\
+  <label class=\"mdl-textfield__label\" for=\"choice3\">Enter your mobile number</label>\
+  </div><br>\
+  <button class=\"mdl-button mdl-js-button mdl-button--fab mdl-button--colored\" name=\"forgotPwd\" type=\"Submit\"><i class=\"material-icons\">?</i></button><br>";
   }
   else{
     y.innerHTML = "<select id=\"uniqid\" name=\"uniqid\" onchange=\"spawnnew()\">\

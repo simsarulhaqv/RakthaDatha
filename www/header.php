@@ -2,22 +2,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <link rel="stylesheet" href="css/fluidbox.min.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/style.css">
+	   <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>
-    RakthaDatha
-  </title>
+     <link rel="shortcut icon" href="img/favicon.ico">
+     <link rel="stylesheet" href="css/fluidbox.min.css">
+     <link rel="stylesheet" href="css/main.css">
+     <link rel="stylesheet" href="css/style.css">
 
-  <link rel="stylesheet" href="css/material.red-deep_orange.min.css" />
-  <link href="css/pace-theme-loading-bar.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+     <title>
+       RakthaDatha
+     </title>
+
+     <link rel="stylesheet" href="css/material.red-deep_orange.min.css">
+     <link rel="stylesheet" href="css/pace-theme-loading-bar.css">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
 
   </head>
   <body>

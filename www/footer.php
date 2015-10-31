@@ -48,20 +48,13 @@
 
 </div>
 
-<script src="js/jquery.1.11.min.js">
-</script>
-<script src="js/jquery.fluidbox.min.js">
-</script>
-<script src="js/main.js">
-</script>
-<script src="js/script.js">
-</script>
-<script src="js/pwdstrngth.js">
-</script>
-<script src="js/material.min.js">
-</script>
-<script src="js/pace-theme-loading-bar.js">
-</script>
+<script src="js/jquery.1.11.min.js"></script>
+<script src="js/jquery.fluidbox.min.js"></script>
+<script src="js/material.min.js"></script>
+<script src="js/pace-theme-loading-bar.js"></script>
+<script src="js/main.js"></script>
+<script src="js/script.js"></script>
+<script src="js/pwdstrngth.js"></script>
 
 </body>
 </html>
